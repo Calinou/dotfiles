@@ -1,0 +1,5 @@
+*
+!*/
+!.gitignore
+!config/init.cfg
+!config/saved.cfg
