@@ -8,6 +8,7 @@ export VISUAL="micro"
 export ANDROID_HOME="$HOME/.local/opt/android"
 export ANDROID_NDK_ROOT="$HOME/.local/opt/android/ndk-bundle"
 export CODESTATS_API_KEY=$(cat "$HOME/.codestats.key")
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
 eval "$(rbenv init -)"
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
