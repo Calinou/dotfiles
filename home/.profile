@@ -14,4 +14,4 @@ export POWERSHELL_TELEMETRY_OPTOUT=1
 
 eval "$(rbenv init -)"
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
-source "$HOME/.goto.sh"
+source "$HOME/.zsh/goto/goto.sh"

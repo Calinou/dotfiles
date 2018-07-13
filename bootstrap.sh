@@ -7,7 +7,31 @@ COLOR_GRAY="\e[1;30m"
 COLOR_GREEN="\e[1;32m"
 COLOR_RESET="\e[0m"
 
-curl -Lo "$HOME/.goto.sh" https://raw.githubusercontent.com/iridakos/goto/master/goto.sh
+# Install Prezto
+
+git clone --recursive \
+		"https://github.com/sorin-ionescu/prezto.git" \
+		"${ZDOTDIR:-$HOME}/.zprezto" || true
+
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/*; do
+  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.$(basename $rcfile)" || true
+done
+
+git clone \
+		"https://github.com/zsh-users/zsh-autosuggestions.git" \
+		"$HOME/.zsh/zsh-autosuggestions" || true
+
+git clone \
+		"https://gitlab.com/code-stats/code-stats-zsh.git" \
+		"$HOME/.zsh/code-stats-zsh" || true
+
+git clone \
+		"https://github.com/iridakos/goto.git" \
+		"$HOME/.zsh/goto" || true
+
+chsh -s /bin/zsh
+
+# Install packages
 
 cargo install \
 		bat cargo-bloat cargo-update clippy cross exa fd-find hyperfine oxipng \
