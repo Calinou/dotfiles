@@ -7,6 +7,8 @@ COLOR_GRAY="\e[1;30m"
 COLOR_GREEN="\e[1;32m"
 COLOR_RESET="\e[0m"
 
+curl -Lo "$HOME/.goto.sh" https://raw.githubusercontent.com/iridakos/goto/master/goto.sh
+
 cargo install \
 		bat cargo-bloat cargo-update clippy cross exa fd-find hyperfine oxipng \
 		ripgrep rls rustfmt tealdeer tokei watchexec &
