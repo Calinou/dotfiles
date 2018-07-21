@@ -2,6 +2,7 @@ export GOPATH="$HOME/.go"
 export N_PREFIX="$HOME/.local/share"
 export PATH="$HOME/.local/bin:$HOME/.rbenv/bin:$HOME/.npm/bin:$HOME/.cargo/bin:$GOPATH/bin:$HOME/.config/composer/vendor/bin:$HOME/.nimble/bin:$HOME/Documents/Git/matejak/argbash/bin:$PATH"
 export WINEDEBUG="-all"
+export COLORTERM="truecolor"
 export MICRO_TRUECOLOR=1
 export BETTER_EXCEPTIONS=1
 export EDITOR="micro"
