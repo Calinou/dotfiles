@@ -1,0 +1,10 @@
+# IDE directories
+.idea/
+.vscode/
+
+# Log files
+npm-debug.log
+yarn-error.log
+
+# System files
+Thumbs.db
