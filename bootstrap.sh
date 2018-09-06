@@ -47,6 +47,7 @@ go get -u \
     github.com/genuinetools/certok \
     github.com/genuinetools/weather \
     github.com/magefile/mage \
+    github.com/mitchellh/gox \
     github.com/mgechev/revive \
     github.com/rakyll/hey \
     github.com/raviqqe/muffet \
