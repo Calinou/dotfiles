@@ -31,6 +31,13 @@ git clone \
 
 chsh -s /bin/zsh
 
+# Install diff-so-fancy
+
+curl -Lo \
+    "$HOME/.local/bin/diff-so-fancy" \
+    "https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy"
+chmod +x "$HOME/.local/bin/diff-so-fancy"
+
 # Install packages
 
 cargo install \
