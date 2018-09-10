@@ -1,0 +1,48 @@
+#!/bin/bash
+# watchpics: Watch a directory for new images and optimize them
+#
+# Dependencies:
+# - cjpeg from MozJPEG (https://github.com/mozilla/mozjpeg)
+# - oxipng (https://github.com/shssoichiro/oxipng)
+# - watchexec (https://github.com/watchexec/watchexec)
+#
+# Copyright © 2018 Hugo Locurcio
+# Licensed under CC0 1.0 Universal: https://creativecommons.org/publicdomain/zero/1.0/
+
+set -euo pipefail
+IFS=$'\n\t'
+
+# The directory to watch
+DIR="${XDG_PICTURES_DIR:-$HOME/Pictures}"
+
+# The minimal size for images to be converted to JPEG
+# The original PNG image is preserved and optimized
+export JPEG_SIZE_THRESHOLD=2000
+
+# The JPEG quality to use (0-100)
+export JPEG_QUALITY=90
+
+echo "Watching $DIR for new images…"
+
+watch_func() {
+  set -euo pipefail
+  IFS=$'\n\t'
+
+  if [[ ! -z "${WATCHEXEC_WRITTEN_PATH+x}" ]]; then
+    if [[ $(file -ib "$WATCHEXEC_WRITTEN_PATH") == "image/png; charset=binary" ]]; then
+      # Only operate on new or modified PNG images
+
+      if [[ "$(du -k "$WATCHEXEC_WRITTEN_PATH" | cut -f 1)" -gt "$JPEG_SIZE_THRESHOLD" ]]; then
+        # Convert to JPEG if the image size in kilobytes is larger than the size threshold
+        echo -n "[mozjpeg] "
+        cjpeg -quality "$JPEG_QUALITY" "$WATCHEXEC_WRITTEN_PATH" > "${WATCHEXEC_WRITTEN_PATH%.*}.jpg" &
+      fi
+
+      echo -n "[oxipng] "
+      oxipng -o6 --strip all "$WATCHEXEC_WRITTEN_PATH" &
+    fi
+  fi
+}
+export -f watch_func
+
+watchexec -pw "$DIR" watch_func
