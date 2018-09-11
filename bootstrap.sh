@@ -61,7 +61,8 @@ go get -u \
     github.com/xo/usql &
 
 pip3 install --user --upgrade \
-    pip setuptools httpie youtube-dl pipenv speedtest-cli &
+    black httpie meson pip pipenv pylint setuptools sphinx speedtest-cli \
+    youtube-dl &
 
 yarn global add \
     clean-css-cli colour-cli eslint gulp-cli lighthouse n npm-check-updates \
