@@ -3,6 +3,7 @@
 #
 # Dependencies:
 # - cjpeg from MozJPEG (https://github.com/mozilla/mozjpeg)
+# - convert from ImageMagick (https://www.imagemagick.org/)
 # - oxipng (https://github.com/shssoichiro/oxipng)
 # - watchexec (https://github.com/watchexec/watchexec)
 #
@@ -24,25 +25,48 @@ export JPEG_QUALITY=90
 
 echo "Watching $DIR for new images…"
 
+optimize_png() {
+  png_image="$1"
+  jpeg_image="${png_image%.*}.jpg"
+
+  if [[ "$(du -k "$png_image" | cut -f 1)" -gt "$JPEG_SIZE_THRESHOLD" ]]; then
+    # Convert to JPEG if the image size in kilobytes is larger than the size threshold
+    echo -n "[mozjpeg] "
+    cjpeg -quality "$JPEG_QUALITY" "$png_image" > "$jpeg_image" &
+  fi
+
+  echo -n "[oxipng] "
+  oxipng -o4 --strip all "$png_image" &
+}
+export -f optimize_png
+
 watch_func() {
   set -euo pipefail
   IFS=$'\n\t'
 
   if [[ ! -z "${WATCHEXEC_WRITTEN_PATH+x}" ]]; then
-    if [[ $(file -ib "$WATCHEXEC_WRITTEN_PATH") == "image/png; charset=binary" ]]; then
-      # Only operate on new or modified PNG images
+    if [[ $(file -ib "$WATCHEXEC_WRITTEN_PATH") == "image/x-tga; charset=binary" ]]; then
+      tga_image="${WATCHEXEC_WRITTEN_PATH}"
+      png_image="${WATCHEXEC_WRITTEN_PATH%.*}.png"
 
-      if [[ "$(du -k "$WATCHEXEC_WRITTEN_PATH" | cut -f 1)" -gt "$JPEG_SIZE_THRESHOLD" ]]; then
-        # Convert to JPEG if the image size in kilobytes is larger than the size threshold
-        echo -n "[mozjpeg] "
-        cjpeg -quality "$JPEG_QUALITY" "$WATCHEXEC_WRITTEN_PATH" > "${WATCHEXEC_WRITTEN_PATH%.*}.jpg" &
-      fi
+      # Convert TGA images to PNG (typically screenshots from old games)
+      # They are converted to uncompressed PNG as they are optimized later on
+      echo -n "[tga -> png] "
+      convert -define png:compression-level=0 "$tga_image" "$png_image"
 
-      echo -n "[oxipng] "
-      oxipng -o6 --strip all "$WATCHEXEC_WRITTEN_PATH" &
+      # The original TGA is not needed anymore
+      rm "$tga_image"
+
+      # Optimize the newly-created PNG image
+      optimize_png "$png_image"
+    fi
+
+    if [[ $(file -ib "") == "image/png; charset=binary" ]]; then
+      # Only operate on PNG images
+      optimize_png "$WATCHEXEC_WRITTEN_PATH"
     fi
   fi
 }
 export -f watch_func
 
-watchexec -pw "$DIR" watch_func
+watchexec -p -w "$DIR" watch_func
