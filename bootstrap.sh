@@ -47,6 +47,7 @@ cargo install \
 
 go get -u \
     github.com/golang/dep/cmd/dep \
+    github.com/asciimoo/wuzz \
     github.com/bcicen/xiny \
     github.com/Calinou/fov \
     github.com/Calinou/ipinfo \
