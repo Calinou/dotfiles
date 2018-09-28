@@ -2,6 +2,7 @@
     "autoclose": true,
     "autoindent": true,
     "autosave": false,
+    "basename": false,
     "colorcolumn": 0,
     "colorscheme": "darcula",
     "cursorline": true,
@@ -9,6 +10,7 @@
     "fastdirty": true,
     "fileformat": "unix",
     "ftoptions": true,
+    "hidehelp": false,
     "ignorecase": true,
     "indentchar": " ",
     "infobar": true,
@@ -16,6 +18,8 @@
     "keymenu": false,
     "linter": true,
     "literate": true,
+    "matchbrace": false,
+    "matchbraceleft": false,
     "mouse": true,
     "pluginchannels": [
         "https://raw.githubusercontent.com/micro-editor/plugin-channel/master/channel.json"
@@ -29,6 +33,7 @@
     "scrollbar": true,
     "scrollmargin": 3,
     "scrollspeed": 2,
+    "smartpaste": true,
     "softwrap": true,
     "splitbottom": true,
     "splitright": true,
