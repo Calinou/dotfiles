@@ -59,6 +59,7 @@ go get -u \
     github.com/mgechev/revive \
     github.com/rakyll/hey \
     github.com/raviqqe/muffet \
+    github.com/tdewolff/minify/cmd/minify \
     github.com/xo/usql &
 
 pip3 install --user --upgrade \
