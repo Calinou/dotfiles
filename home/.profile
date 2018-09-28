@@ -9,7 +9,9 @@ export EDITOR="micro"
 export VISUAL="micro"
 export ANDROID_HOME="$HOME/.local/opt/android"
 export ANDROID_NDK_ROOT="$HOME/.local/opt/android/ndk-bundle"
-export CODESTATS_API_KEY=$(cat "$HOME/.codestats.key")
+export CODESTATS_API_KEY=$(cat "$HOME/.config/codestats.key")
+export RESTIC_REPOSITORY=$(head -n1 "$HOME/.config/restic-default")
+export RESTIC_PASSWORD=$(head -n2 "$HOME/.config/restic-default" | tail -n1)
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export POWERSHELL_TELEMETRY_OPTOUT=1
 
