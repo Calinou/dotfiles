@@ -67,9 +67,9 @@ pip3 install --user --upgrade \
     speedtest-cli youtube-dl &
 
 yarn global add \
-    clean-css-cli colour-cli eslint gulp-cli lighthouse n npm-check-updates \
-    npms-cli npx ntl prettier randomatic-cli serve stylelint tslint typescript \
-    uncss wappalyzer
+    clean-css-cli colour-cli eslint gulp-cli lighthouse markdownlint-cli \
+    n npm-check-updates npms-cli npx ntl prettier randomatic-cli serve \
+    stylelint tslint typescript uncss wappalyzer
 
 echo -e "\n$COLOR_GRAY"
 printf '—%.0s' {1..80}
