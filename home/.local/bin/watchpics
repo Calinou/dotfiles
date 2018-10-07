@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # watchpics: Watch a directory for new images and optimize them
 #
 # Dependencies:
