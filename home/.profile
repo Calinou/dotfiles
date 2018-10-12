@@ -1,6 +1,6 @@
 export GOPATH="$HOME/.go"
 export N_PREFIX="$HOME/.local/share"
-export PATH="$HOME/.local/bin:$HOME/.rbenv/bin:$HOME/.npm/bin:$HOME/.cargo/bin:$GOPATH/bin:$HOME/.config/composer/vendor/bin:$HOME/.nimble/bin:$PATH:$HOME/.local/opt/android/platform-tools"
+export PATH="$HOME/.local/bin:$HOME/.pyenv/bin:$HOME/.pyenv/shims:$HOME/.rbenv/bin:$HOME/.rbenv/shims:$HOME/.npm/bin:$HOME/.cargo/bin:$GOPATH/bin:$HOME/.config/composer/vendor/bin:$HOME/.nimble/bin:$PATH:$HOME/.local/opt/android/platform-tools"
 export WINEDEBUG="-all"
 export COLORTERM="truecolor"
 export MICRO_TRUECOLOR=1
@@ -15,6 +15,5 @@ export RESTIC_PASSWORD=$(head -n2 "$HOME/.config/restic-default" | tail -n1)
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export POWERSHELL_TELEMETRY_OPTOUT=1
 
-eval "$(rbenv init -)"
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 source "$HOME/.zsh/goto/goto.sh"
