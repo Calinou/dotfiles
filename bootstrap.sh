@@ -63,7 +63,7 @@ go get -u \
     github.com/xo/usql &
 
 pip3 install --user --upgrade \
-    black codespell httpie meson pip pipenv pylint setuptools sphinx \
+    black codespell gitup httpie meson pip pipenv pylint setuptools sphinx \
     speedtest-cli youtube-dl &
 
 yarn global add \
