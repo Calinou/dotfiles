@@ -63,8 +63,8 @@ go get -u \
     github.com/xo/usql &
 
 pip3 install --user --upgrade \
-    black codespell gitup httpie meson pip pipenv pylint setuptools sphinx \
-    speedtest-cli youtube-dl &
+    black codespell gitup httpie meson pip pipenv pre-commit pylint setuptools \
+    speedtest-cli sphinx sphinx_rtd_theme youtube-dl &
 
 yarn global add \
     clean-css-cli colour-cli eslint gulp-cli lighthouse markdownlint-cli \
