@@ -19,13 +19,16 @@ set rtp+=~/.config/nvim/bundle/Vundle.vim
 call vundle#begin('~/.config/nvim/bundle')
     Plugin 'VundleVim/Vundle.vim'
 
-    " Plugins
+    " General-purpose plugins
     Plugin 'vim-airline/vim-airline'
     Plugin 'vim-airline/vim-airline-themes'
     Plugin 'Shougo/deoplete.nvim'
     Plugin 'airblade/vim-gitgutter'
     Plugin 'nathanaelkane/vim-indent-guides'
     Plugin 'https://gitlab.com/code-stats/code-stats-vim'
+
+    " Language-specific plugins
+    Plugin 'fatih/vim-go'
 
     " Syntax files
     Plugin 'sheerun/vim-polyglot'
