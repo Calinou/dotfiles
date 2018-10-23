@@ -30,6 +30,7 @@ call vundle#end()
 filetype plugin indent on
 
 " Plugin settings
+let g:airline#extensions#tabline#enabled = 1
 let g:deoplete#enable_at_startup = 1
 let g:indent_guides_guide_size = 1
 let g:indent_guides_color_change_percent = 3
