@@ -11,6 +11,7 @@ syntax enable
 set termguicolors
 set number
 set updatetime=100
+set mouse=a
 
 filetype off
 set rtp+=~/.config/nvim/bundle/Vundle.vim
