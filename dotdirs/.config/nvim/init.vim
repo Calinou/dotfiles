@@ -10,6 +10,7 @@ set smarttab
 syntax enable
 set termguicolors
 set number
+set nofoldenable
 set updatetime=100
 set mouse=a
 
@@ -24,6 +25,7 @@ call vundle#begin('~/.config/nvim/bundle')
     Plugin 'nathanaelkane/vim-indent-guides'
 
     " Syntax files
+    Plugin 'baabelfish/nvim-nim'
     Plugin 'leafgarland/typescript-vim'
     Plugin 'lumiliet/vim-twig'
 call vundle#end()
