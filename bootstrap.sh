@@ -38,39 +38,6 @@ curl -Lo \
     "https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy"
 chmod +x "$HOME/.local/bin/diff-so-fancy"
 
-# Install packages
-
-cargo install \
-    bat cargo-bloat cargo-update clippy cross dssim exa fd-find hyperfine \
-    oxipng parallel racer ripgrep rls rustfmt svgcleaner tealdeer tokei \
-    watchexec &
-
-go get -u \
-    github.com/golang/dep/cmd/dep \
-    github.com/asciimoo/wuzz \
-    github.com/bcicen/xiny \
-    github.com/Calinou/fov \
-    github.com/Calinou/ipinfo \
-    github.com/FiloSottile/mkcert \
-    github.com/genuinetools/certok \
-    github.com/genuinetools/weather \
-    github.com/magefile/mage \
-    github.com/mitchellh/gox \
-    github.com/mgechev/revive \
-    github.com/rakyll/hey \
-    github.com/raviqqe/muffet \
-    github.com/tdewolff/minify/cmd/minify \
-    github.com/xo/usql &
-
-pip3 install --user --upgrade \
-    black codespell gitup httpie meson pip pipenv pre-commit pylint setuptools \
-    speedtest-cli sphinx sphinx_rtd_theme youtube-dl &
-
-yarn global add \
-    clean-css-cli colour-cli eslint gulp-cli lighthouse markdownlint-cli \
-    n npm-check-updates npms-cli npx ntl prettier randomatic-cli serve \
-    stylelint tslint typescript uncss wappalyzer
-
 echo -e "\n$COLOR_GRAY"
 printf '—%.0s' {1..80}
 echo -e "\n ${COLOR_GREEN}Done bootstrapping.${COLOR_GRAY}"
