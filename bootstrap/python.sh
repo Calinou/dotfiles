@@ -17,5 +17,5 @@ fi
 # Install packages
 
 pip3 install --upgrade \
-    black codespell gitup httpie meson pip pipenv pre-commit pylint setuptools \
-    speedtest-cli sphinx sphinx_rtd_theme youtube-dl
+    black codespell gitup httpie meson pip pipenv pre-commit pylint remarshal \
+    setuptools speedtest-cli sphinx sphinx_rtd_theme youtube-dl
