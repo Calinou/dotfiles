@@ -3,6 +3,15 @@
 set -euo pipefail
 IFS=$'\n\t'
 
+# Install gimme and Go
+
+if ! command -v gimme > /dev/null 2>&1; then
+  curl -fsSL https://raw.githubusercontent.com/travis-ci/gimme/master/gimme -o "$HOME/.local/bin/gimme"
+  chmod +x "$HOME/.local/bin/gimme"
+
+  gimme 1.11.1
+fi
+
 # Install packages
 
 go get -u \
@@ -20,4 +29,4 @@ go get -u \
     github.com/rakyll/hey \
     github.com/raviqqe/muffet \
     github.com/tdewolff/minify/cmd/minify \
-    github.com/xo/usql &
+    github.com/xo/usql
