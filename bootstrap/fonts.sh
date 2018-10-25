@@ -5,11 +5,13 @@ IFS=$'\n\t'
 
 # Install Google Fonts
 
-git clone "https://github.com/google/fonts.git" "$HOME/.fonts/google-fonts/"
+git clone --depth 1 \
+		"https://github.com/google/fonts.git" \
+		"$HOME/.fonts/google-fonts/" || true
 
 # Install Inter UI
 
 tmp="$(mktemp)"
-curl -Lo "$tmp" "https://github.com/rsms/inter/releases/download/v2.5/Inter-UI-2.5.zip"
-unzip "$tmp" "Inter UI (TTF hinted)/*" -d "$HOME/.fonts/"
+curl -fsSLo "$tmp" "https://github.com/rsms/inter/releases/download/v2.5/Inter-UI-2.5.zip"
+unzip -o "$tmp" "Inter UI (TTF hinted)/*" -d "$HOME/.fonts/"
 rm "$tmp"
