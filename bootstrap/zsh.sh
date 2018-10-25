@@ -3,13 +3,15 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-COLOR_GRAY="\e[1;30m"
-COLOR_GREEN="\e[1;32m"
-COLOR_RESET="\e[0m"
+# Install Basher
+
+git clone --depth=1 \
+    "https://github.com/basherpm/basher.git" \
+    "$HOME/.basher" || true
 
 # Install Prezto
 
-git clone --recursive \
+git clone --depth=1 --recursive \
     "https://github.com/sorin-ionescu/prezto.git" \
     "${ZDOTDIR:-$HOME}/.zprezto" || true
 
@@ -17,29 +19,34 @@ for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/*; do
   ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.$(basename $rcfile)" || true
 done
 
-git clone \
+# Install zsh-autosuggestions
+
+git clone --depth=1 \
     "https://github.com/zsh-users/zsh-autosuggestions.git" \
     "$HOME/.zsh/zsh-autosuggestions" || true
 
-git clone \
+# Install Code::Stats zsh plugin
+
+git clone --depth=1 \
     "https://gitlab.com/code-stats/code-stats-zsh.git" \
     "$HOME/.zsh/code-stats-zsh" || true
 
-git clone \
+# Install goto
+
+git clone --depth=1 \
     "https://github.com/iridakos/goto.git" \
     "$HOME/.zsh/goto" || true
 
-chsh -s /bin/zsh
-
 # Install diff-so-fancy
 
-curl -Lo \
-    "$HOME/.local/bin/diff-so-fancy" \
-    "https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy"
-chmod +x "$HOME/.local/bin/diff-so-fancy"
+if ! command -v diff-so-fancy > /dev/null 2>&1; then
+	curl -fsSLo \
+	    "$HOME/.local/bin/diff-so-fancy" \
+	    "https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy"
+	chmod +x "$HOME/.local/bin/diff-so-fancy"
+fi
 
-echo -e "\n$COLOR_GRAY"
-printf '—%.0s' {1..80}
-echo -e "\n ${COLOR_GREEN}Done bootstrapping.${COLOR_GRAY}"
-printf '—%.0s' {1..80}
-echo -e "$COLOR_RESET"
+# Set default shell
+
+chsh -s /bin/zsh
+
