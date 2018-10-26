@@ -6,7 +6,8 @@ IFS=$'\n\t'
 # Install gimme and Go
 
 if ! command -v gimme > /dev/null 2>&1; then
-  curl -fsSL https://raw.githubusercontent.com/travis-ci/gimme/master/gimme -o "$HOME/.local/bin/gimme"
+  curl -fsSL "https://raw.githubusercontent.com/travis-ci/gimme/master/gimme" \
+      -o "$HOME/.local/bin/gimme"
   chmod +x "$HOME/.local/bin/gimme"
 
   gimme 1.11.1

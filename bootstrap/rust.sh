@@ -6,7 +6,10 @@ IFS=$'\n\t'
 # Install rustup and stable Rust if not already present
 
 if ! command -v rustup > /dev/null 2>&1; then
-  curl https://sh.rustup.rs -sSf | sh
+  tmp="$(mktemp)"
+  curl -fsS "https://sh.rustup.rs" -o "$tmp"
+  sh "$tmp"
+  rm "$tmp"
   export PATH="$HOME/.cargo/bin:$PATH"
 fi
 

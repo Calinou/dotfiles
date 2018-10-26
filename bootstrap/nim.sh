@@ -9,7 +9,7 @@ if ! command -v choosenim > /dev/null 2>&1; then
   export CHOOSENIM_NO_ANALYTICS=1
   export CHOOSENIM_CHOOSE_VERSION="stable"
   tmp="$(mktemp)"
-  curl https://nim-lang.org/choosenim/init.sh -sSf > "$tmp"
+  curl -fsS "https://nim-lang.org/choosenim/init.sh" -o "$tmp"
   sh "$tmp" -y
   rm "$tmp"
   export PATH="$HOME/.nimble/bin:$PATH"

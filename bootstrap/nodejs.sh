@@ -6,7 +6,10 @@ IFS=$'\n\t'
 # Install Yarn if not already present
 
 if ! command -v yarn > /dev/null 2>&1; then
-  curl -L https://yarnpkg.com/install.sh | bash
+  tmp="$(mktemp)"
+  curl -fsSL "https://yarnpkg.com/install.sh" -o "$tmp"
+  bash "$tmp"
+  rm "$tmp"
   export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 fi
 

@@ -40,10 +40,10 @@ git clone --depth=1 \
 # Install diff-so-fancy
 
 if ! command -v diff-so-fancy > /dev/null 2>&1; then
-	curl -fsSLo \
-	    "$HOME/.local/bin/diff-so-fancy" \
-	    "https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy"
-	chmod +x "$HOME/.local/bin/diff-so-fancy"
+  curl -fsSL
+      "https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy" \
+      -o "$HOME/.local/bin/diff-so-fancy"
+  chmod +x "$HOME/.local/bin/diff-so-fancy"
 fi
 
 # Set default shell

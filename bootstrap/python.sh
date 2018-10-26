@@ -6,7 +6,11 @@ IFS=$'\n\t'
 # Install pyenv and Python if not already present
 
 if ! command -v pyenv > /dev/null 2>&1; then
-  curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
+  tmp="$(mktemp)"
+  curl -fsSL "https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer" \
+      -o "$tmp"
+   bash "$tmp"
+   rm "$tmp"
   export PATH="$HOME/.pyenv/bin:$HOME/.pyenv/shims:$PATH"
 
   pyenv install 3.7.1
