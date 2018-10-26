@@ -20,6 +20,7 @@ go get -u \
     github.com/bcicen/xiny \
     github.com/Calinou/fov \
     github.com/Calinou/ipinfo \
+    github.com/eliukblau/pixterm \
     github.com/FiloSottile/mkcert \
     github.com/genuinetools/certok \
     github.com/genuinetools/weather \
