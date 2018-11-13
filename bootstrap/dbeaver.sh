@@ -9,6 +9,7 @@ if ! command -v dbeaver > /dev/null 2>&1; then
   tmp="$(mktemp)"
   curl -fsSL "https://dbeaver.io/files/dbeaver-ce-latest-linux.gtk.x86_64.tar.gz" \
       -o "$tmp"
+  rm -rf "$HOME/.local/opt/dbeaver/"
   tar xf "$tmp" -C "$HOME/.local/opt/"
   rm "$tmp"
 
