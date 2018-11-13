@@ -16,6 +16,8 @@ export RESTIC_PASSWORD=$(head -n2 "$HOME/.config/restic-default" | tail -n1)
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export POWERSHELL_TELEMETRY_OPTOUT=1
 
+alias make="/usr/bin/make -j $(nproc)"
+
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 source "$HOME/.zsh/goto/goto.sh"
 eval "$(basher init -)"
