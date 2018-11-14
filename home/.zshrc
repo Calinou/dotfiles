@@ -15,8 +15,6 @@ fi
 source ~/.profile
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/code-stats-zsh/codestats.plugin.zsh
-alias ls="exa"
-alias git="hub"
 
 fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit && compinit -i
