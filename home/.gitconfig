@@ -4,7 +4,7 @@
 	name = Hugo Locurcio
 	email = hugo.locurcio@hugo.pro
 [alias]
-	lg = log --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	lg = log --color --pretty=format:'%C(245)%h%Creset  %C(yellow)%ci %C(white bold)%>(24)%an%Creset -%C(bold magenta)%d%Creset %s' --abbrev-commit
 [core]
 	excludesfile = ~/.gitignore_global
 	pager = diff-so-fancy | less --tabs=4 -RFX
