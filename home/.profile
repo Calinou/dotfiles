@@ -18,6 +18,7 @@ export POWERSHELL_TELEMETRY_OPTOUT=1
 
 alias make="make -j $(nproc)"
 alias ls="exa"
+alias la="exa -a"
 alias git="hub"
 
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
