@@ -16,6 +16,6 @@ fi
 # Install packages
 
 yarn global add \
-    clean-css-cli colour-cli eslint gulp-cli lighthouse markdownlint-cli \
+    clean-css-cli eslint gulp-cli lighthouse markdownlint-cli \
     n npm-check-updates npms-cli npx ntl prettier randomatic-cli serve \
     site-scan stylelint tslint typescript uncss wappalyzer
