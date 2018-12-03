@@ -16,6 +16,9 @@ export RESTIC_PASSWORD=$(head -n2 "$HOME/.config/restic-default" | tail -n1)
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export POWERSHELL_TELEMETRY_OPTOUT=1
 
+# Required for docker-compose
+export UID
+
 alias make="make -j $(nproc)"
 alias ls="exa"
 alias la="exa -a"
