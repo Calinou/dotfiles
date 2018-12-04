@@ -25,6 +25,7 @@ alias make="make -j $(nproc)"
 alias ls="exa"
 alias la="exa -a"
 alias git="hub"
+alias pwsh="pwsh -NoLogo"
 
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 source "$HOME/.zsh/goto/goto.sh"
