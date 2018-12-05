@@ -16,7 +16,7 @@ git clone --depth=1 --recursive \
     "${ZDOTDIR:-$HOME}/.zprezto" || true
 
 for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/*; do
-  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.$(basename $rcfile)" || true
+  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.$(basename "$rcfile")" || true
 done
 
 # Install zsh-autosuggestions
@@ -49,4 +49,3 @@ fi
 # Set default shell
 
 chsh -s /bin/zsh
-

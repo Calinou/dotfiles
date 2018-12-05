@@ -22,4 +22,4 @@ rm "$tmp_archive"
 cmake -H. -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Release
 cmake --build build
 sudo cmake --build build -- install
-rm -rf "$tmp_dir/"
+rm -rf "${tmp_dir:?}/"
