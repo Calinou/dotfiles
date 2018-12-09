@@ -3,7 +3,7 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-# Install gimme and Go
+# Install gimme and Go if not already present
 
 if ! command -v gimme > /dev/null 2>&1; then
   curl -fsSL "https://raw.githubusercontent.com/travis-ci/gimme/master/gimme" \
