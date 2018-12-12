@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+IFS=$'\n\t'
+
+tns run android \
+    --bundle \
+    --release \
+    --key-store-path "$HOME/Sync/Documents/debug.keystore.p12" \
+    --key-store-password android \
+    --key-store-alias androiddebugkey \
+    --key-store-alias-password android \
+    --env.uglify \
+    --env.production \
+    --env.snapshot
