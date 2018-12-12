@@ -20,11 +20,11 @@ mv "$HOME/.local/opt/openarena-0.8.8/" "$HOME/.local/opt/openarena/"
 rm -rf "$HOME/.local/opt/openarena"/{__MACOSX,*.app,*.dll,*.exe,*.i386}
 
 # Create a launcher script
-cat > "$HOME/.local/bin/openarena" << EOF
+cat > "$HOME/.local/bin/openarena" << 'EOF'
 #!/bin/sh
 
 cd "$HOME/.local/opt/openarena/"
-./openarena.x86_64 "\$@"
+./openarena.x86_64 "$@"
 EOF
 chmod +x "$HOME/.local/bin/openarena"
 
