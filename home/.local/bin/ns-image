@@ -1,0 +1,47 @@
+#!/usr/bin/env python3
+#
+# Copyright © 2018 Hugo Locurcio
+# Licensed under CC0 1.0 Universal: https://creativecommons.org/publicdomain/zero/1.0/
+
+from os import path
+from plumbum import local, cli
+from plumbum.cmd import convert
+
+# Percentages are relative to the image's original size, which should be
+# tailored for Android's `xxxhdpi` density
+
+ANDROID_SIZES = {
+    "ldpi": "18.75%",
+    "mdpi": "25%",
+    "hdpi": "37.5%",
+    "xhdpi": "50%",
+    "xxhdpi": "75%",
+    "xxxhdpi": "100%",
+}
+
+IOS_SIZES = {"1x": "25%", "2x": "50%", "3x": "75%"}
+
+
+class App(cli.Application):
+    def main(self, input: cli.ExistingFile, output_dir):
+        for density, size in ANDROID_SIZES.items():
+            suboutput_dir = path.join(
+                output_dir, f"Android/src/main/res/drawable-{density}"
+            )
+
+            local.path(suboutput_dir).mkdir()
+            convert["-resize"][size][input][
+                path.join(suboutput_dir, local.path(input).basename)
+            ]
+
+        for density, size in IOS_SIZES.items():
+            suboutput_dir = path.join(output_dir, "iOS")
+
+            local.path(suboutput_dir).mkdir()
+            convert["-resize"][size][input][
+                path.join(suboutput_dir, f"{local.path(input).stem}@{density}.png")
+            ]
+
+
+if __name__ == "__main__":
+    App.run()
