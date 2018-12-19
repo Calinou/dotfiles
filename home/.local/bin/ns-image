@@ -30,17 +30,23 @@ class App(cli.Application):
             )
 
             local.path(suboutput_dir).mkdir()
-            convert["-resize"][size][input][
-                path.join(suboutput_dir, local.path(input).basename)
-            ]
+            convert(
+                "-resize",
+                size,
+                input,
+                path.join(suboutput_dir, local.path(input).basename),
+            )
 
         for density, size in IOS_SIZES.items():
             suboutput_dir = path.join(output_dir, "iOS")
 
             local.path(suboutput_dir).mkdir()
-            convert["-resize"][size][input][
-                path.join(suboutput_dir, f"{local.path(input).stem}@{density}.png")
-            ]
+            convert(
+                "-resize",
+                size,
+                input,
+                path.join(suboutput_dir, f"{local.path(input).stem}@{density}.png"),
+            )
 
 
 if __name__ == "__main__":
