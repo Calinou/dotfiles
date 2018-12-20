@@ -33,7 +33,7 @@
     "terminal.external.linuxExec": "konsole",
     "terminal.integrated.fontSize": 12,
     "terminal.integrated.lineHeight": 1.3,
-    "terminal.integrated.scrollback": 10000,
+    "terminal.integrated.scrollback": 50000,
     "workbench.startupEditor": "newUntitledFile",
     "workbench.colorCustomizations":
     {
@@ -56,8 +56,12 @@
     "search.location": "panel",
     "python.linting.flake8Enabled": true,
     "python.linting.mypyEnabled": true,
-    "python.pythonPath": "/home/hugo/.pyenv/versions/3.7.0/bin/python",
+    "python.pythonPath": "/home/hugo/.pyenv/versions/3.7.1/bin/python",
     "python.linting.pylintEnabled": false,
     "python.formatting.provider": "black",
     "workbench.panel.defaultLocation": "right",
+    "window.titleBarStyle": "custom",
+    "window.menuBarVisibility": "visible",
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.cursorStyle": "line",
 }
