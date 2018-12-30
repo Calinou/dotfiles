@@ -8,7 +8,7 @@ IFS=$'\n\t'
 tmp="$(mktemp)"
 curl -fsSL "https://dbeaver.io/files/dbeaver-ce-latest-linux.gtk.x86_64.tar.gz" \
     -o "$tmp"
-rm -rf "$HOME/.local/opt/dbeaver/"
+rm -rf "$HOME/.local/opt/dbeaver/" "$HOME/.local/bin/dbeaver"
 tar xf "$tmp" -C "$HOME/.local/opt/"
 rm "$tmp"
 

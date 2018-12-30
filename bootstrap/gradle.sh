@@ -8,7 +8,7 @@ IFS=$'\n\t'
 tmp="$(mktemp)"
 curl -fsSL "https://services.gradle.org/distributions/gradle-5.0-bin.zip" \
     -o "$tmp"
-rm -rf "$HOME/.local/opt/gradle/"
+rm -rf "$HOME/.local/opt/gradle/" "$HOME/.local/bin/gradle"
 unzip "$tmp" -d "$HOME/.local/opt/"
 rm "$tmp"
 mv "$HOME/.local/opt/gradle-5.0/" "$HOME/.local/opt/gradle/"
