@@ -37,15 +37,14 @@
     "workbench.startupEditor": "newUntitledFile",
     "workbench.colorCustomizations":
     {
-        "statusBar.background": "#3c3c3c",
-        "statusBar.noFolderBackground": "#3c3c3c",
-        "statusBar.debuggingBackground": "#6c5c3c"
+        "statusBar.background": "#333333",
+        "statusBar.noFolderBackground": "#333333",
+        "statusBar.debuggingBackground": "#665533"
     },
     "rust.mode": "legacy",
     "vsicons.dontShowNewVersionMessage": true,
     "window.newWindowDimensions": "maximized",
     "workbench.iconTheme": "vscode-icons",
-    "workbench.colorTheme": "Darcula",
     "rust.rustup": {
         "nightlyToolchain": "nightly-x86_64-unknown-linux-gnu",
         "toolchain": "nightly-x86_64-unknown-linux-gnu"
@@ -64,4 +63,7 @@
     "window.menuBarVisibility": "visible",
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.cursorStyle": "line",
+    "eslint.packageManager": "yarn",
+    "npm.packageManager": "yarn",
+    "tslint.packageManager": "yarn",
 }
