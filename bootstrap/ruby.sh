@@ -13,8 +13,8 @@ if ! command -v rbenv > /dev/null 2>&1; then
   rm "$tmp"
   export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
 
-  rbenv install 2.5.1
-  rbenv global 2.5.1
+  rbenv install 2.6.0
+  rbenv global 2.6.0
 fi
 
 # Install packages
