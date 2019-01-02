@@ -13,9 +13,9 @@ if ! command -v pyenv > /dev/null 2>&1; then
   rm "$tmp"
   export PATH="$HOME/.pyenv/bin:$HOME/.pyenv/shims:$PATH"
 
-  pyenv install 3.7.1
+  pyenv install 3.7.2
   pyenv install 2.7.15
-  pyenv global 2.7.15 3.7.1
+  pyenv global 2.7.15 3.7.2
 fi
 
 # Install packages
