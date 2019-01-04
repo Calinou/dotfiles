@@ -12,7 +12,7 @@ git clone --depth 1 \
 # Install Inter UI
 
 tmp="$(mktemp)"
-curl -fsSL "https://github.com/rsms/inter/releases/download/v3.1/Inter-UI-3.1.zip" \
+curl -fsSL "https://github.com/rsms/inter/releases/download/v3.2/Inter-UI-3.2.zip" \
     -o "$tmp"
 unzip -o "$tmp" "Inter UI (TTF hinted)/*" -d "$HOME/.fonts/"
 rm "$tmp"
