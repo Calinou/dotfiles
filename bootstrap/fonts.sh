@@ -9,6 +9,22 @@ git clone --depth 1 \
     "https://github.com/google/fonts.git" \
     "$HOME/.fonts/google-fonts/" || true
 
+# Install Hack font
+
+tmp="$(mktemp)"
+curl -fsSL "https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.zip" \
+    -o "$tmp"
+unzip -jo "$tmp" "ttf/*" -d "$HOME/.fonts/"
+rm "$tmp"
+
+# Install IBM Plex
+
+tmp="$(mktemp)"
+curl -fsSL "https://github.com/IBM/plex/releases/download/v1.2.3/TrueType.zip" \
+    -o "$tmp"
+unzip -o "$tmp" "TrueType/*" -d "$HOME/.fonts/"
+rm "$tmp"
+
 # Install Inter UI
 
 tmp="$(mktemp)"
