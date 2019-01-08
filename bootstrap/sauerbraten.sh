@@ -18,11 +18,11 @@ rm "$tmp"
 # Clean up unnecessary files
 rm -rf "$HOME/.local/opt/sauerbraten"/{docs,src,README.html}
 
-cat > "$HOME/.local/bin/sauerbraten" << EOF
+cat > "$HOME/.local/bin/sauerbraten" << 'EOF'
 #!/bin/sh
 
 cd "$HOME/.local/opt/sauerbraten/"
-./sauerbraten_unix "\$@"
+./sauerbraten_unix "$@"
 EOF
 chmod +x "$HOME/.local/bin/sauerbraten"
 
@@ -33,7 +33,7 @@ Version=1.0
 Name=Cube 2: Sauerbraten
 GenericName=First-person shooter
 Comment=Fast-paced first-person shooter with cooperative map editing
-Exec=sauerbraten
+Exec=$HOME/.local/bin/sauerbraten
 Icon=sauerbraten
 Categories=Game;
 EOF
