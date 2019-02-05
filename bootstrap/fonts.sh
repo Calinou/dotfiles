@@ -25,12 +25,12 @@ curl -fsSL "https://github.com/IBM/plex/releases/download/v1.2.3/TrueType.zip" \
 unzip -o "$tmp" "TrueType/*" -d "$HOME/.fonts/"
 rm "$tmp"
 
-# Install Inter UI
+# Install Inter
 
 tmp="$(mktemp)"
-curl -fsSL "https://github.com/rsms/inter/releases/download/v3.2/Inter-UI-3.2.zip" \
+curl -fsSL "https://github.com/rsms/inter/releases/download/v3.3/Inter-3.3.zip" \
     -o "$tmp"
-unzip -o "$tmp" "Inter UI (TTF hinted)/*" -d "$HOME/.fonts/"
+unzip -o "$tmp" "Inter (TTF hinted)/*" -d "$HOME/.fonts/"
 rm "$tmp"
 
 # Install Noto fonts
