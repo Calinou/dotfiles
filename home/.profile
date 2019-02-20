@@ -1,7 +1,7 @@
 export GOPATH="$HOME/.go"
 export GOROOT="$HOME/.gimme/versions/go1.11.5.linux.amd64"
 export N_PREFIX="$HOME/.local/share"
-export PATH="$HOME/.local/bin:$HOME/.basher/bin:$HOME/.pyenv/bin:$HOME/.pyenv/shims:$HOME/.rbenv/bin:$HOME/.rbenv/shims:$HOME/.yarn/bin:$HOME/.npm/bin:$HOME/.cargo/bin:$GOROOT/bin:$GOPATH/bin:$HOME/.config/composer/vendor/bin:$HOME/.nimble/bin:/home/linuxbrew/.linuxbrew/bin:$PATH:$ANDROID_HOME/platform-tools"
+export PATH="$HOME/.local/bin:$HOME/.basher/bin:$HOME/.pyenv/bin:$HOME/.pyenv/shims:$HOME/.rbenv/bin:$HOME/.rbenv/shims:$HOME/.yarn/bin:$HOME/.npm/bin:$HOME/.cargo/bin:$GOROOT/bin:$GOPATH/bin:$HOME/.config/composer/vendor/bin:$HOME/.nimble/bin:$HOME/.luarocks/bin:/home/linuxbrew/.linuxbrew/bin:$PATH:$ANDROID_HOME/platform-tools"
 export WINEDEBUG="-all"
 export COLORTERM="truecolor"
 export MICRO_TRUECOLOR=1
