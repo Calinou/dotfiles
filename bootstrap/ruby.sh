@@ -19,4 +19,4 @@ fi
 
 # Install packages
 
-gem install bundler travis
+gem install bundler solargraph travis
