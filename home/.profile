@@ -17,6 +17,7 @@ export RESTIC_REPOSITORY=$(head -n1 "$HOME/.config/restic-default")
 export RESTIC_PASSWORD=$(head -n2 "$HOME/.config/restic-default" | tail -n1)
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export POWERSHELL_TELEMETRY_OPTOUT=1
+export PHAN_DISABLE_XDEBUG_WARN=1
 
 # Required for docker-compose
 export UID
