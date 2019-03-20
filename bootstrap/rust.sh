@@ -16,6 +16,7 @@ fi
 # Install packages
 
 cargo install \
-    bat cargo-bloat cargo-outdated cargo-update clippy cross dssim exa fd-find \
-    hyperfine oxipng parallel racer ripgrep rls rustfmt svgcleaner tealdeer \
+    bat cargo-audit cargo-bloat cargo-edit cargo-license cargo-outdated \
+    cargo-update cargo-watch clippy cross dssim exa fd-find gifski hyperfine \
+    lagraph oxipng parallel racer ripgrep rls rustfmt svgcleaner tealdeer \
     tokei watchexec
