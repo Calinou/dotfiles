@@ -17,5 +17,5 @@ fi
 
 yarn global add \
     clean-css-cli eslint gulp-cli lighthouse markdownlint-cli \
-    n npm-check-updates npms-cli npx ntl prettier randomatic-cli serve \
+    npm-check-updates npms-cli npx ntl prettier randomatic-cli serve \
     site-scan stylelint tslint typescript uncss wappalyzer
