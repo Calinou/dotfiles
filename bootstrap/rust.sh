@@ -13,10 +13,37 @@ if ! command -v rustup > /dev/null 2>&1; then
   export PATH="$HOME/.cargo/bin:$PATH"
 fi
 
+# Install Rust components
+
+rustup component add \
+    clippy \
+    rustfmt
+
 # Install packages
 
 cargo install \
-    bat cargo-audit cargo-bloat cargo-edit cargo-license cargo-outdated \
-    cargo-update cargo-watch clippy cross dssim exa fd-find gifski hyperfine \
-    lagraph oxipng parallel racer ripgrep rls rustfmt svgcleaner tealdeer \
-    tokei watchexec
+    bat \
+    cargo-audit \
+    cargo-bloat \
+    cargo-edit \
+    cargo-fix \
+    cargo-license \
+    cargo-outdated \
+    cargo-update \
+    cargo-watch \
+    cross \
+    dssim \
+    exa \
+    fd-find \
+    gifski \
+    hyperfine \
+    lagraph \
+    oxipng \
+    parallel \
+    racer \
+    ripgrep \
+    rls \
+    svgcleaner \
+    tealdeer \
+    tokei \
+    watchexec
