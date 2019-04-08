@@ -5,8 +5,10 @@ IFS=$'\n\t'
 
 # Install AssaultCube
 
+VERSION="1.2.0.2"
+
 tmp="$(mktemp)"
-curl -fsSL "https://github.com/assaultcube/AC/releases/download/v1.2.0.2/AssaultCube_v1.2.0.2.tar.bz2" \
+curl -fsSL "https://github.com/assaultcube/AC/releases/download/v$VERSION/AssaultCube_v$VERSION.tar.bz2" \
     -o "$tmp"
 rm -rf \
     "$HOME/.local/opt/assaultcube/" \

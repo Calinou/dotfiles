@@ -5,8 +5,10 @@ IFS=$'\n\t'
 
 # Install PowerShell
 
+VERSION="6.2.0"
+
 tmp="$(mktemp)"
-curl -fsSL "https://github.com/PowerShell/PowerShell/releases/download/v6.2.0-preview.2/powershell-6.2.0-preview.2-linux-x64.tar.gz" \
+curl -fsSL "https://github.com/PowerShell/PowerShell/releases/download/v$VERSION/powershell-$VERSION-linux-x64.tar.gz" \
     -o "$tmp"
 rm -rf "$HOME/.local/opt/powershell/" "$HOME/.local/bin/pwsh"
 mkdir -p "$HOME/.local/opt/powershell/"

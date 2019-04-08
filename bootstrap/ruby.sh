@@ -5,6 +5,8 @@ IFS=$'\n\t'
 
 # Install rbenv and Ruby if not already present
 
+RUBY_VERSION="2.6.1"
+
 if ! command -v rbenv > /dev/null 2>&1; then
   tmp="$(mktemp)"
   curl -fsSL "https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-installer" \
@@ -13,8 +15,8 @@ if ! command -v rbenv > /dev/null 2>&1; then
   rm "$tmp"
   export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
 
-  rbenv install 2.6.0
-  rbenv global 2.6.0
+  rbenv install "$RUBY_VERSION"
+  rbenv global "$RUBY_VERSION"
 fi
 
 # Install packages

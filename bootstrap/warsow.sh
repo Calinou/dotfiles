@@ -5,8 +5,10 @@ IFS=$'\n\t'
 
 # Install Warsow
 
+VERSION="2.1.2"
+
 tmp="$(mktemp)"
-curl -fsSL "http://sebastian.network/warsow/warsow-2.1.2.tar.gz" \
+curl -fsSL "http://sebastian.network/warsow/warsow-$VERSION.tar.gz" \
     -o "$tmp"
 rm -rf \
     "$HOME/.local/opt/warsow/" \

@@ -5,9 +5,11 @@ IFS=$'\n\t'
 
 # Install Caprine
 
+VERSION="2.30.2"
+
 tmp_appimage="$(mktemp)"
 tmp_dir="$(mktemp -d)"
-curl -fsSL "https://github.com/sindresorhus/caprine/releases/download/v2.30.1/caprine-2.30.1-x86_64.AppImage" \
+curl -fsSL "https://github.com/sindresorhus/caprine/releases/download/v$VERSION/caprine-$VERSION-x86_64.AppImage" \
     -o "$tmp_appimage"
 chmod +x "$tmp_appimage"
 (cd "$tmp_dir" && "$tmp_appimage" --appimage-extract)

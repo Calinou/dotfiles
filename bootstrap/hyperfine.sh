@@ -5,8 +5,10 @@ IFS=$'\n\t'
 
 # Install hyperfine
 
+VERSION="1.5.0"
+
 tmp="$(mktemp)"
-curl -fsSL "https://github.com/sharkdp/hyperfine/releases/download/v1.5.0/hyperfine-v1.5.0-x86_64-unknown-linux-gnu.tar.gz" \
+curl -fsSL "https://github.com/sharkdp/hyperfine/releases/download/v$VERSION/hyperfine-v$VERSION-x86_64-unknown-linux-gnu.tar.gz" \
     -o "$tmp"
-tar xf "$tmp" "hyperfine-v1.5.0-x86_64-unknown-linux-gnu/hyperfine" --strip-components=1 --one-top-level="$HOME/.local/bin/"
+tar xf "$tmp" "hyperfine-v$VERSION-x86_64-unknown-linux-gnu/hyperfine" --strip-components=1 --one-top-level="$HOME/.local/bin/"
 rm "$tmp"
