@@ -21,6 +21,10 @@ if ! command -v pyenv > /dev/null 2>&1; then
   pyenv global "$PYTHON2_VERSION" "$PYTHON3_VERSION"
 fi
 
+# Install Poetry
+
+curl -sSL "https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py" | python
+
 # Install packages
 
 pip3 install --upgrade \
