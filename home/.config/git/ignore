@@ -9,3 +9,10 @@ npm-debug.log
 
 # Windows-specific files
 Thumbs.db
+
+# Cache directories
+.mypy_cache/
+
+# Python virtual environment
+.venv/
+venv/
