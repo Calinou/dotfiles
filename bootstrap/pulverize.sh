@@ -8,7 +8,7 @@ IFS=$'\n\t'
 tmp="$(mktemp)"
 curl -fsSL "https://github.com/sciactive/pulverize/archive/master.tar.gz" \
     -o "$tmp"
-rm -rf "$HOME/.local/{bin,opt}/pulverize/"
+rm -rf "$HOME"/.local/{bin,opt}/pulverize
 tar xf "$tmp" --strip-components=1 --one-top-level="$HOME/.local/opt/pulverize/"
 rm "$tmp"
 

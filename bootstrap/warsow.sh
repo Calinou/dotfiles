@@ -11,8 +11,7 @@ tmp="$(mktemp)"
 curl -fsSL "http://sebastian.network/warsow/warsow-$VERSION.tar.gz" \
     -o "$tmp"
 rm -rf \
-    "$HOME/.local/opt/warsow/" \
-    "$HOME/.local/bin/warsow" \
+    "$HOME"/.local/{bin,opt}/warsow/ \
     "$HOME/.local/share/applications/warsow.desktop"
 tar xf "$tmp" --strip-components=1 --one-top-level="$HOME/.local/opt/warsow/"
 rm "$tmp"

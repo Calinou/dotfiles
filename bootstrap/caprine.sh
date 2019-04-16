@@ -13,7 +13,7 @@ curl -fsSL "https://github.com/sindresorhus/caprine/releases/download/v$VERSION/
     -o "$tmp_appimage"
 chmod +x "$tmp_appimage"
 (cd "$tmp_dir" && "$tmp_appimage" --appimage-extract)
-rm -rf "$HOME/.local/opt/caprine/" "$HOME/.local/bin/caprine"
+rm -rf "$HOME"/.local/{bin,opt}/caprine
 mv "$tmp_dir/squashfs-root" "$HOME/.local/opt/caprine/"
 rm -rf "$tmp_appimage" "$tmp_dir"
 

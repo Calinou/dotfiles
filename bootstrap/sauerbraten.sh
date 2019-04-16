@@ -9,8 +9,7 @@ tmp="$(mktemp)"
 curl -fsSL "https://downloads.sourceforge.net/project/sauerbraten/sauerbraten/2013_01_04/sauerbraten_2013_04_04_collect_edition_linux.tar.bz2" \
     -o "$tmp"
 rm -rf \
-    "$HOME/.local/opt/sauerbraten/" \
-    "$HOME/.local/bin/sauerbraten" \
+    "$HOME"/.local/{bin,opt}/sauerbraten \
     "$HOME/.local/share/applications/sauerbraten.desktop"
 tar xf "$tmp" -C "$HOME/.local/opt/"
 rm "$tmp"

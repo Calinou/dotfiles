@@ -11,8 +11,7 @@ tmp="$(mktemp)"
 curl -fsSL "https://downloads.teeworlds.com/teeworlds-$VERSION-linux_x86_64.tar.gz" \
     -o "$tmp"
 rm -rf \
-    "$HOME/.local/opt/teeworlds/" \
-    "$HOME/.local/bin/teeworlds" \
+    "$HOME"/.local/{bin,opt}/teeworlds \
     "$HOME/.local/share/applications/teeworlds.desktop"
 tar xf "$tmp" --strip-components=1 --one-top-level="$HOME/.local/opt/teeworlds/"
 rm "$tmp"

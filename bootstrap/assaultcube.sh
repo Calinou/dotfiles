@@ -11,8 +11,7 @@ tmp="$(mktemp)"
 curl -fsSL "https://github.com/assaultcube/AC/releases/download/v$VERSION/AssaultCube_v$VERSION.tar.bz2" \
     -o "$tmp"
 rm -rf \
-    "$HOME/.local/opt/assaultcube/" \
-    "$HOME/.local/bin/assaultcube" \
+    "$HOME"/.local/{bin,opt}/assaultcube \
     "$HOME/.local/share/applications/assaultcube.desktop"
 tar xf "$tmp" --strip-components=1 --one-top-level="$HOME/.local/opt/assaultcube/"
 rm "$tmp"

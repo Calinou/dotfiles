@@ -9,8 +9,7 @@ tmp="$(mktemp)"
 curl -fsSL "http://download.tuxfamily.org/openarena/rel/088/openarena-0.8.8.zip" \
     -o "$tmp"
 rm -rf \
-    "$HOME/.local/opt/openarena/" \
-    "$HOME/.local/bin/openarena" \
+    "$HOME"/.local/{bin,opt}/openarena \
     "$HOME/.local/share/applications/openarena.desktop"
 unzip "$tmp" -d "$HOME/.local/opt/"
 rm "$tmp"

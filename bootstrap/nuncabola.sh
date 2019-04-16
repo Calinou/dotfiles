@@ -11,8 +11,7 @@ tmp="$(mktemp)"
 curl -fsSL "http://uppgarn.com/nuncabola/nuncabola-$VERSION.zip" \
     -o "$tmp"
 rm -rf \
-    "$HOME/.local/opt/nuncabola/" \
-    "$HOME/.local/bin/nuncabola" \
+    "$HOME"/.local/{bin,opt}/nuncabola \
     "$HOME/.local/share/applications/nuncabola.desktop"
 unzip "$tmp" -d "$HOME/.local/opt/"
 rm "$tmp"

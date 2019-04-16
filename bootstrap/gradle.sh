@@ -10,7 +10,7 @@ VERSION="5.3.1"
 tmp="$(mktemp)"
 curl -fsSL "https://downloads.gradle.org/distributions/gradle-$VERSION-bin.zip" \
     -o "$tmp"
-rm -rf "$HOME/.local/opt/gradle/" "$HOME/.local/bin/gradle"
+rm -rf "$HOME"/.local/{bin,opt}/gradle
 unzip "$tmp" -d "$HOME/.local/opt/"
 rm "$tmp"
 mv "$HOME/.local/opt/gradle-$VERSION/" "$HOME/.local/opt/gradle/"

@@ -11,8 +11,7 @@ tmp="$(mktemp)"
 curl -fsSL "https://github.com/red-eclipse/base/releases/download/v$VERSION/redeclipse_${VERSION}_nix.tar.bz2" \
     -o "$tmp"
 rm -rf \
-    "$HOME/.local/opt/redeclipse/" \
-    "$HOME/.local/bin/redeclipse" \
+    "$HOME"/.local/{bin,opt}/redeclipse \
     "$HOME/.local/share/applications/redeclipse.desktop"
 tar xf "$tmp" --strip-components=1 --one-top-level="$HOME/.local/opt/redeclipse/"
 rm "$tmp"
