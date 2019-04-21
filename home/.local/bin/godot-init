@@ -1,0 +1,8 @@
+#!/bin/sh
+#
+# For Linux and macOS.
+# The Godot editor must be in your `PATH` as `godot` for this script to work.
+
+mkdir -p "$1"
+touch "$1/project.godot"
+godot "$1/project.godot"
