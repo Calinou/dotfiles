@@ -1,7 +1,22 @@
-#!/bin/sh
+#!/bin/bash
 #
 # For Linux and macOS.
 # The Godot editor must be in your `PATH` as `godot` for this script to work.
+# Licensed under CC0 1.0 Universal.
+
+set -euo pipefail
+IFS=$'\n\t'
+
+if [[ ! "${1:-}" || "${1:-}" == "--help" || "${1:-}" == "-h" ]]; then
+  echo "Usage: $(basename "$0") <path>"
+
+  # Exit with code 0 only if help was explicitly requested
+  if [[ "${1:-}" == "--help" || "${1:-}" == "-h" ]]; then
+    exit 0
+  else
+    exit 1
+  fi
+fi
 
 mkdir -p "$1"
 touch "$1/project.godot"
