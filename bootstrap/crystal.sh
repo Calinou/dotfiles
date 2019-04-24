@@ -16,3 +16,4 @@ rm "$tmp"
 mv "$HOME/.local/opt"/crystal* "$HOME/.local/opt/crystal"
 
 ln -s "$HOME/.local/opt/crystal/bin/crystal" "$HOME/.local/bin/crystal"
+ln -s "$HOME/.local/opt/crystal/bin/shards" "$HOME/.local/bin/shards"
