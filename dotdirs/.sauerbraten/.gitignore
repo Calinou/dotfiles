@@ -3,5 +3,6 @@
 !.gitignore
 !autoexec.cfg
 !config.cfg
+!extendedconfig.cfg
 !init.cfg
 !packages/fonts/*
