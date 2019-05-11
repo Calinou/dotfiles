@@ -13,6 +13,10 @@ Thumbs.db
 # Cache directories
 .mypy_cache/
 
-# Python virtual environment
+# Python virtual environments
 .venv/
 venv/
+
+# Flatpak build files
+.flatpak-builder/
+builddir/
