@@ -9,6 +9,14 @@ git clone --depth 1 \
     "https://github.com/google/fonts.git" \
     "$HOME/.fonts/google-fonts/" || true
 
+# Install Cooper Hewitt
+
+tmp="$(mktemp)"
+curl -fsSSL "https://github.com/tom10271/cooper-hewitt-fixed-for-windows/archive/master.zip" \
+    -o "$tmp"
+unzip -o "$tmp" -d "$HOME/.fonts/cooper-hewitt/"
+rm "$tmp"
+
 # Install Hack font
 
 HACK_VERSION="3.003"
