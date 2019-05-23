@@ -9,6 +9,10 @@ git clone --depth=1 \
     "https://github.com/basherpm/basher.git" \
     "$HOME/.basher/" || true
 
+# Install Basher packages
+
+basher install Calinou/0x0
+
 # Install Prezto
 
 git clone --depth=1 --recursive \
