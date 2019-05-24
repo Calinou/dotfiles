@@ -18,6 +18,7 @@ scancode = 81
 interface/editor/code_font_size = 13
 interface/editor/main_font_hinting = 0
 interface/editor/code_font_hinting = 0
+interface/editor/quit_confirmation = false
 interface/theme/preset = "Custom"
 interface/theme/base_color = Color( 0.227451, 0.25098, 0.27451, 1 )
 interface/theme/accent_color = Color( 0.721569, 0.894118, 1, 1 )
