@@ -66,3 +66,13 @@ curl -fsSL "https://noto-website-2.storage.googleapis.com/pkgs/NotoMono-hinted.z
     -o "$tmp"
 unzip -o "$tmp" -d "$HOME/.fonts/noto-mono/"
 rm "$tmp"
+
+# Install Public Sans
+
+PUBLIC_SANS_VERSION="1.003"
+
+tmp="$(mktemp)"
+curl -fsSL "https://github.com/uswds/public-sans/releases/download/v$PUBLIC_SANS_VERSION/public-sans-v$PUBLIC_SANS_VERSION.zip" \
+    -o "$tmp"
+unzip -j -o "$tmp" -d "$HOME/.fonts/public-sans/" "fonts/otf/*"
+rm "$tmp"
