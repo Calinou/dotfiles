@@ -5,7 +5,7 @@ IFS=$'\n\t'
 
 # Install PowerShell
 
-VERSION="6.2.0"
+VERSION="6.2.1"
 
 tmp="$(mktemp)"
 curl -fsSL "https://github.com/PowerShell/PowerShell/releases/download/v$VERSION/powershell-$VERSION-linux-x64.tar.gz" \
