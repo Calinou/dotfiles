@@ -5,7 +5,7 @@ IFS=$'\n\t'
 
 # Install Phoronix Test Suite
 
-VERSION="8.6.1"
+VERSION="8.8.0"
 
 tmp="$(mktemp)"
 curl -fsSL "https://phoronix-test-suite.com/releases/phoronix-test-suite-$VERSION.tar.gz" \
