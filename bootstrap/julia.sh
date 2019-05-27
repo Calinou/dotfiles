@@ -5,7 +5,7 @@ IFS=$'\n\t'
 
 # Install Julia
 
-VERSION="1.1.0"
+VERSION="1.1.1"
 
 tmp="$(mktemp)"
 curl -fsSL "https://julialang-s3.julialang.org/bin/linux/x64/${VERSION%.*}/julia-$VERSION-linux-x86_64.tar.gz" \
