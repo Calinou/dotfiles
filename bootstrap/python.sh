@@ -29,4 +29,5 @@ curl -sSL "https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.
 
 pip3 install --upgrade \
     black buku codespell flake8 gitup httpie meson mypy pip pipenv pre-commit \
-    pylint remarshal setuptools speedtest-cli sphinx sphinx_rtd_theme youtube-dl
+    pylint py-spy remarshal setuptools speedtest-cli sphinx sphinx_rtd_theme \
+    youtube-dl
