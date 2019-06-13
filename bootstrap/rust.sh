@@ -22,7 +22,6 @@ rustup component add \
 # Install packages
 
 cargo install \
-    bat \
     cargo-audit \
     cargo-bloat \
     cargo-edit \
@@ -34,14 +33,10 @@ cargo install \
     cross \
     dssim \
     exa \
-    fd-find \
     gifski \
-    hyperfine \
     lagraph \
     oxipng \
-    parallel \
     racer \
-    ripgrep \
     rls \
     svgcleaner \
     tealdeer \
