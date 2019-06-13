@@ -29,7 +29,7 @@ rm "$tmp"
 
 # Install IBM Plex
 
-IBM_PLEX_VERSION="1.4.1"
+IBM_PLEX_VERSION="2.0.0"
 
 tmp="$(mktemp)"
 curl -fsSL "https://github.com/IBM/plex/releases/download/v$IBM_PLEX_VERSION/TrueType.zip" \
