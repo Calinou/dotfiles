@@ -6,7 +6,7 @@ IFS=$'\n\t'
 # Install Shotcut
 
 tmp="$(mktemp)"
-curl -fsSL "https://github.com/mltframework/shotcut/releases/download/v19.04.30/shotcut-linux-x86_64-190430.txz" \
+curl -fsSL "https://github.com/mltframework/shotcut/releases/download/v19.06.04/shotcut-linux-x86_64-190604.txz" \
     -o "$tmp"
 rm -rf \
     "$HOME"/.local/{bin,opt}/shotcut \
