@@ -5,7 +5,7 @@ IFS=$'\n\t'
 
 # Install bat
 
-VERSION="0.10.0"
+VERSION="0.11.0"
 
 tmp_archive="$(mktemp)"
 tmp_dir="$(mktemp -d)"
