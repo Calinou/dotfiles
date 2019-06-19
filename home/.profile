@@ -20,6 +20,7 @@ export POWERSHELL_TELEMETRY_OPTOUT=1
 export PHAN_DISABLE_XDEBUG_WARN=1
 export FZF_DEFAULT_COMMAND="fd"
 export FZF_DEFAULT_OPTS="--exact"
+export RUSTC_WRAPPER="sccache"
 
 export CODESTATS_API_KEY
 CODESTATS_API_KEY=$(cat "$HOME/.config/codestats.key")

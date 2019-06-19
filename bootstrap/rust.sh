@@ -38,6 +38,7 @@ cargo install \
     oxipng \
     racer \
     rls \
+    sccache \
     svgcleaner \
     tealdeer \
     tokei \
