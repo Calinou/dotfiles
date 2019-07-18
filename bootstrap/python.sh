@@ -28,6 +28,23 @@ curl -sSL "https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.
 # Install packages
 
 pip3 install --upgrade \
-    black buku codespell flake8 gitup httpie meson mypy pip pipenv pre-commit \
-    pylint py-spy remarshal setuptools speedtest-cli sphinx sphinx_rtd_theme \
+    black \
+    buku \
+    codespell \
+    flake8 \
+    gitup \
+    httpie \
+    meson \
+    mypy \
+    pip \
+    pipenv \
+    pre-commit \
+    pylint \
+    py-spy \
+    remarshal \
+    rope \
+    setuptools \
+    speedtest-cli \
+    sphinx \
+    sphinx_rtd_theme \
     youtube-dl
