@@ -3,6 +3,16 @@
 set -euo pipefail
 IFS=$'\n\t'
 
+# Install fnm if not already present
+
+if ! command -v fnm > /dev/null 2>&1; then
+  tmp="$(mktemp)"
+  curl -fsSL "https://github.com/Schniz/fnm/raw/master/.ci/install.sh" -o "$tmp"
+  bash "$tmp"
+  rm "$tmp"
+  export PATH="$HOME/.fnm:$PATH"
+fi
+
 # Install Yarn if not already present
 
 if ! command -v yarn > /dev/null 2>&1; then
