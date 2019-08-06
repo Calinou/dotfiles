@@ -39,7 +39,7 @@ rm "$tmp"
 
 # Install Inter
 
-INTER_VERSION="3.7"
+INTER_VERSION="3.8"
 
 tmp="$(mktemp)"
 curl -fsSL "https://github.com/rsms/inter/releases/download/v$INTER_VERSION/Inter-$INTER_VERSION.zip" \
