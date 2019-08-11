@@ -39,8 +39,9 @@ alias git="hub"
 alias pwsh="pwsh -NoLogo"
 alias artisan="php artisan"
 
-source "$HOME/.homesick/repos/homeshick/homeshick.sh"
-source "$HOME/.zsh/goto/goto.sh"
+[ -f "$HOME/.homesick/repos/homeshick/homeshick.sh" ] && source "$HOME/.homesick/repos/homeshick/homeshick.sh"
+[ -f "$HOME/.zsh/goto/goto.sh" ] && source "$HOME/.zsh/goto/goto.sh"
+[ -f "$HOME/.travis/travis.sh" ] && source "$HOME/.travis/travis.sh"
 eval "$(basher init -)"
 eval "$(fnm env --multi)"
 
