@@ -35,6 +35,7 @@ pip3 install --upgrade \
     gitup \
     httpie \
     meson \
+    mitmproxy \
     mypy \
     pip \
     pipenv \
