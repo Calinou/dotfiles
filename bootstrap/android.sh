@@ -16,7 +16,7 @@ rm "$tmp"
 
 # Install Android NDK
 
-NDK_VERSION="r19c"
+NDK_VERSION="r20"
 
 tmp="$(mktemp)"
 curl -fsSL "https://dl.google.com/android/repository/android-ndk-$NDK_VERSION-linux-x86_64.zip" \
