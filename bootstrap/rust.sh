@@ -36,6 +36,7 @@ cargo install \
     gifski \
     lagraph \
     oxipng \
+    pastel \
     racer \
     rls \
     sccache \
