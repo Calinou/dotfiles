@@ -48,4 +48,5 @@ pip3 install --upgrade \
     speedtest-cli \
     sphinx \
     sphinx_rtd_theme \
+    weasyprint \
     youtube-dl
