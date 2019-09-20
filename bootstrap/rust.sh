@@ -40,6 +40,7 @@ cargo install \
     racer \
     rls \
     sccache \
+    sd \
     svgcleaner \
     tealdeer \
     tokei \
