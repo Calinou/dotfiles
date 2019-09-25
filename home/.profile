@@ -63,3 +63,18 @@ transfer() {
   cat "$tmpfile"
   rm -f "$tmpfile"
 }
+
+# Get the SHA-256 sum of a file at the URL specified
+curl256sum() {
+  if [[ "$#" -eq 0 ]]; then
+    echo "Usage: curl256sum <URL>"
+    return 1
+  fi
+
+  if [[ "$#" -gt 1 ]]; then
+    echo "Error: Too many arguments (1 expected, $# given)."
+    return 1
+  fi
+
+  curl -fL "$1" | sha256sum | cut -d " " -f 1
+}
