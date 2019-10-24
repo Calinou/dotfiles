@@ -10,6 +10,9 @@ npm-debug.log
 # Windows-specific files
 Thumbs.db
 
+# macOS-specific files
+.DS_Store
+
 # Cache directories
 .mypy_cache/
 
