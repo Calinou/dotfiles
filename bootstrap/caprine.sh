@@ -5,7 +5,7 @@ IFS=$'\n\t'
 
 # Install Caprine
 
-VERSION="2.40.0"
+VERSION="2.41.1"
 
 tmp_appimage="$(mktemp)"
 tmp_dir="$(mktemp -d)"
