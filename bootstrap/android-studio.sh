@@ -6,7 +6,7 @@ IFS=$'\n\t'
 # Install Android Studio
 
 tmp="$(mktemp)"
-curl -fsSL "https://dl.google.com/dl/android/studio/ide-zips/3.5.0.21/android-studio-ide-191.5791312-linux.tar.gz" \
+curl -fsSL "https://dl.google.com/dl/android/studio/ide-zips/3.5.2.0/android-studio-ide-191.5977832-linux.tar.gz" \
     -o "$tmp"
 rm -rf \
     "$HOME"/.local/{bin,opt}/android-studio \
