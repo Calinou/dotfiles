@@ -33,6 +33,7 @@ pip3 install --upgrade \
     codespell \
     flake8 \
     gitup \
+    guardonce \
     httpie \
     meson \
     mitmproxy \
