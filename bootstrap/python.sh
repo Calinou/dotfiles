@@ -36,7 +36,6 @@ pip3 install --upgrade \
     guardonce \
     httpie \
     meson \
-    mitmproxy \
     mypy \
     pip \
     pipenv \
