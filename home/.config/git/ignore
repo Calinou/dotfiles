@@ -23,3 +23,8 @@ venv/
 # Flatpak build files
 .flatpak-builder/
 builddir/
+
+# Java files
+.project
+.classpath
+org.eclipse.buildship.core.prefs
