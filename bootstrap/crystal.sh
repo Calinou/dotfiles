@@ -5,7 +5,7 @@ IFS=$'\n\t'
 
 # Install Crystal
 
-VERSION="0.29.0"
+VERSION="0.32.1"
 
 tmp="$(mktemp)"
 curl -fsSL "https://github.com/crystal-lang/crystal/releases/download/$VERSION/crystal-$VERSION-1-linux-x86_64.tar.gz" \
