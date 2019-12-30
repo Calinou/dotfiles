@@ -5,10 +5,10 @@ IFS=$'\n\t'
 
 # Install Red Eclipse
 
-VERSION="1.6.0"
+VERSION="2.0.0"
 
 tmp="$(mktemp)"
-curl -fsSL "https://github.com/red-eclipse/base/releases/download/v$VERSION/redeclipse_${VERSION}_nix.tar.bz2" \
+curl -fsSL "https://github.com/redeclipse/base/releases/download/v$VERSION/redeclipse_${VERSION}_nix.tar.bz2" \
     -o "$tmp"
 rm -rf \
     "$HOME"/.local/{bin,opt}/redeclipse \
