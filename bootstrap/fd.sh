@@ -5,7 +5,7 @@ IFS=$'\n\t'
 
 # Install fd
 
-VERSION="7.3.0"
+VERSION="7.4.0"
 
 tmp_archive="$(mktemp)"
 tmp_dir="$(mktemp -d)"
