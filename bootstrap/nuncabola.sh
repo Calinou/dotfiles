@@ -5,7 +5,7 @@ IFS=$'\n\t'
 
 # Install Nuncabola
 
-VERSION="0.193"
+VERSION="0.194"
 
 tmp="$(mktemp)"
 curl -fsSL "http://uppgarn.com/nuncabola/nuncabola-$VERSION.zip" \
