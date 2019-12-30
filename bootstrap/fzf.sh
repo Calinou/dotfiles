@@ -5,7 +5,7 @@ IFS=$'\n\t'
 
 # Install fzf
 
-VERSION="0.18.0"
+VERSION="0.20.0"
 
 tmp="$(mktemp)"
 curl -fsSL "https://github.com/junegunn/fzf-bin/releases/download/$VERSION/fzf-$VERSION-linux_amd64.tgz" \
