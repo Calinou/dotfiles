@@ -5,7 +5,7 @@ IFS=$'\n\t'
 
 # Install hadolint
 
-VERSION="1.16.3"
+VERSION="1.17.3"
 
 curl -fsSL "https://github.com/hadolint/hadolint/releases/download/v$VERSION/hadolint-Linux-x86_64" \
     -o "$HOME/.local/bin/hadolint"
