@@ -5,7 +5,7 @@ IFS=$'\n\t'
 
 # Install Gradle
 
-VERSION="5.4.1"
+VERSION="6.0.1"
 
 tmp="$(mktemp)"
 curl -fsSL "https://downloads.gradle.org/distributions/gradle-$VERSION-bin.zip" \
