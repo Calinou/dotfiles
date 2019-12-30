@@ -5,7 +5,7 @@ IFS=$'\n\t'
 
 # Install Teeworlds
 
-VERSION="0.7.2"
+VERSION="0.7.4"
 
 tmp="$(mktemp)"
 curl -fsSL "https://downloads.teeworlds.com/teeworlds-$VERSION-linux_x86_64.tar.gz" \
