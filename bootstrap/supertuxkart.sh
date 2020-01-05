@@ -6,7 +6,7 @@ IFS=$'\n\t'
 # Install SuperTuxKart
 
 tmp="$(mktemp)"
-curl -fsSL "https://downloads.sourceforge.net/project/supertuxkart/SuperTuxKart/1.0/supertuxkart-1.0-linux.tar.xz" \
+curl -fsSL "https://iweb.dl.sourceforge.net/project/supertuxkart/SuperTuxKart/1.1/SuperTuxKart-1.1-linux.tar.xz" \
     -o "$tmp"
 rm -rf \
     "$HOME"/.local/{bin,opt}/supertuxkart \
