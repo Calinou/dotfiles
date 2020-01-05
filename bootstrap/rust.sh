@@ -22,6 +22,7 @@ rustup component add \
 # Install packages
 
 cargo install \
+    bandwhich \
     cargo-audit \
     cargo-bloat \
     cargo-edit \
