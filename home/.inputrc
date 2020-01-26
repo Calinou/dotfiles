@@ -1,0 +1,5 @@
+# Make autocompletion case-insensitive
+set completion-ignore-case on
+
+# Show completions when pressing Tab once rather than twice
+set show-all-if-ambiguous on
