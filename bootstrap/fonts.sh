@@ -27,6 +27,16 @@ curl -fsSL "https://github.com/source-foundry/Hack/releases/download/v$HACK_VERS
 unzip -jo "$tmp" "ttf/*" -d "$HOME/.fonts/"
 rm "$tmp"
 
+# Install JetBrains Mono
+
+JETBRAINS_MONO_VERSION="1.0.3"
+
+tmp="$(mktemp)"
+curl -fsSL "https://github.com/JetBrains/JetBrainsMono/releases/download/v$JETBRAINS_MONO_VERSION/JetBrainsMono-$JETBRAINS_MONO_VERSION.zip" \
+    -o "$tmp"
+unzip -jo "$tmp" "JetBrainsMono-$JETBRAINS_MONO_VERSION-Source/ttf/*" -d "$HOME/.fonts/jetbrains-mono/"
+rm "$tmp"
+
 # Install IBM Plex
 
 IBM_PLEX_VERSION="2.0.0"
