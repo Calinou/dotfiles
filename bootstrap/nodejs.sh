@@ -26,6 +26,19 @@ fi
 # Install packages
 
 yarn global add \
-    clean-css-cli eslint gulp-cli lighthouse markdownlint-cli \
-    npm-check-updates npms-cli npx ntl pa11y prettier randomatic-cli \
-    serve site-scan stylelint tslint typescript uncss wappalyzer
+    clean-css-cli \
+    eslint \
+    gulp-cli \
+    lighthouse \
+    markdownlint-cli \
+    npms-cli \
+    ntl \
+    pa11y \
+    prettier \
+    randomatic-cli \
+    serve \
+    site-scan \
+    stylelint \
+    typescript \
+    uncss \
+    wappalyzer
