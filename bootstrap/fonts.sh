@@ -49,12 +49,12 @@ rm "$tmp"
 
 # Install Inter
 
-INTER_VERSION="3.11"
+INTER_VERSION="3.13"
 
 tmp="$(mktemp)"
 curl -fsSL "https://github.com/rsms/inter/releases/download/v$INTER_VERSION/Inter-$INTER_VERSION.zip" \
     -o "$tmp"
-unzip -o "$tmp" "Inter/*" -d "$HOME/.fonts/"
+unzip -jo "$tmp" "Inter Desktop/*" -d "$HOME/.fonts/"
 rm "$tmp"
 
 # Install Noto fonts
