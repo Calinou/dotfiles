@@ -15,7 +15,7 @@ tmp="$(mktemp)"
 curl -fsSSL "https://github.com/tom10271/cooper-hewitt-fixed-for-windows/archive/master.zip" \
     -o "$tmp"
 unzip -o "$tmp" -d "$HOME/.fonts/cooper-hewitt/"
-rm "$tmp"
+rm -f "$tmp"
 
 # Install Hack font
 
@@ -25,7 +25,7 @@ tmp="$(mktemp)"
 curl -fsSL "https://github.com/source-foundry/Hack/releases/download/v$HACK_VERSION/Hack-v$HACK_VERSION-ttf.zip" \
     -o "$tmp"
 unzip -jo "$tmp" "ttf/*" -d "$HOME/.fonts/"
-rm "$tmp"
+rm -f "$tmp"
 
 # Install JetBrains Mono
 
@@ -35,7 +35,7 @@ tmp="$(mktemp)"
 curl -fsSL "https://github.com/JetBrains/JetBrainsMono/releases/download/v$JETBRAINS_MONO_VERSION/JetBrainsMono-$JETBRAINS_MONO_VERSION.zip" \
     -o "$tmp"
 unzip -jo "$tmp" "JetBrainsMono-$JETBRAINS_MONO_VERSION-Source/ttf/*" -d "$HOME/.fonts/jetbrains-mono/"
-rm "$tmp"
+rm -f "$tmp"
 
 # Install IBM Plex
 
@@ -45,7 +45,7 @@ tmp="$(mktemp)"
 curl -fsSL "https://github.com/IBM/plex/releases/download/v$IBM_PLEX_VERSION/TrueType.zip" \
     -o "$tmp"
 unzip -o "$tmp" "TrueType/*" -d "$HOME/.fonts/"
-rm "$tmp"
+rm -f "$tmp"
 
 # Install Inter
 
@@ -55,7 +55,7 @@ tmp="$(mktemp)"
 curl -fsSL "https://github.com/rsms/inter/releases/download/v$INTER_VERSION/Inter-$INTER_VERSION.zip" \
     -o "$tmp"
 unzip -jo "$tmp" "Inter Desktop/*" -d "$HOME/.fonts/"
-rm "$tmp"
+rm -f "$tmp"
 
 # Install Noto fonts
 
@@ -63,19 +63,19 @@ tmp="$(mktemp)"
 curl -fsSL "https://noto-website-2.storage.googleapis.com/pkgs/NotoSans-hinted.zip" \
     -o "$tmp"
 unzip -o "$tmp" -d "$HOME/.fonts/noto-sans/"
-rm "$tmp"
+rm -f "$tmp"
 
 tmp="$(mktemp)"
 curl -fsSL "https://noto-website-2.storage.googleapis.com/pkgs/NotoSerif-hinted.zip" \
     -o "$tmp"
 unzip -o "$tmp" -d "$HOME/.fonts/noto-serif/"
-rm "$tmp"
+rm -f "$tmp"
 
 tmp="$(mktemp)"
 curl -fsSL "https://noto-website-2.storage.googleapis.com/pkgs/NotoMono-hinted.zip" \
     -o "$tmp"
 unzip -o "$tmp" -d "$HOME/.fonts/noto-mono/"
-rm "$tmp"
+rm -f "$tmp"
 
 # Install Public Sans
 
@@ -85,4 +85,4 @@ tmp="$(mktemp)"
 curl -fsSL "https://github.com/uswds/public-sans/releases/download/v$PUBLIC_SANS_VERSION/public-sans-v$PUBLIC_SANS_VERSION.zip" \
     -o "$tmp"
 unzip -j -o "$tmp" -d "$HOME/.fonts/public-sans/" "fonts/otf/*"
-rm "$tmp"
+rm -f "$tmp"
