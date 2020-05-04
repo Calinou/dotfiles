@@ -5,7 +5,7 @@ IFS=$'\n\t'
 
 # Install rbenv and Ruby if not already present
 
-RUBY_VERSION="2.7.0"
+RUBY_VERSION="2.7.1"
 
 if ! command -v rbenv > /dev/null 2>&1; then
   tmp="$(mktemp)"
