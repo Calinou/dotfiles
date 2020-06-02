@@ -41,15 +41,6 @@ git clone --depth=1 \
     "https://github.com/iridakos/goto.git" \
     "$HOME/.zsh/goto/" || true
 
-# Install diff-so-fancy
-
-if ! command -v diff-so-fancy > /dev/null 2>&1; then
-  curl -fsSL \
-      "https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy" \
-      -o "$HOME/.local/bin/diff-so-fancy"
-  chmod +x "$HOME/.local/bin/diff-so-fancy"
-fi
-
 # Set default shell
 
 chsh -s /bin/zsh
