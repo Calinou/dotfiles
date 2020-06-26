@@ -1,4 +1,4 @@
-//Anime4K v3.0 GLSL
+//Anime4K v3.1 GLSL
 
 // MIT License
 
@@ -23,12 +23,12 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-//!DESC Anime4K-v3.0-ThinLines(Fast)-Kernel(X)
+//!DESC Anime4K-v3.1-ThinLines(VeryFast)-Kernel(X)
 //!HOOK NATIVE
 //!BIND HOOKED
 //!SAVE LUMAD
-//!WIDTH NATIVE.w 2 /
-//!HEIGHT NATIVE.h 2 /
+//!WIDTH NATIVE.w 4 /
+//!HEIGHT NATIVE.h 4 /
 //!COMPONENTS 2
 
 #define L_tex NATIVE_tex
@@ -61,13 +61,13 @@ vec4 hook() {
 }
 
 
-//!DESC Anime4K-v3.0-ThinLines(Fast)-Kernel(Y)
+//!DESC Anime4K-v3.1-ThinLines(VeryFast)-Kernel(Y)
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND LUMAD
 //!SAVE LUMAD
-//!WIDTH NATIVE.w 2 /
-//!HEIGHT NATIVE.h 2 /
+//!WIDTH NATIVE.w 4 /
+//!HEIGHT NATIVE.h 4 /
 //!COMPONENTS 1
 
 vec4 hook() {
@@ -104,13 +104,13 @@ vec4 hook() {
 }
 
 
-//!DESC Anime4K-v3.0-ThinLines(Fast)-Kernel(X)
+//!DESC Anime4K-v3.1-ThinLines(VeryFast)-Kernel(X)
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND LUMAD
 //!SAVE LUMADG
-//!WIDTH NATIVE.w 2 /
-//!HEIGHT NATIVE.h 2 /
+//!WIDTH NATIVE.w 4 /
+//!HEIGHT NATIVE.h 4 /
 //!COMPONENTS 1
 
 #define L_tex LUMAD_tex
@@ -137,14 +137,14 @@ vec4 hook() {
 }
 
 
-//!DESC Anime4K-v3.0-ThinLines(Fast)-Kernel(Y)
+//!DESC Anime4K-v3.1-ThinLines(VeryFast)-Kernel(Y)
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND LUMAD
 //!BIND LUMADG
 //!SAVE LUMAD
-//!WIDTH NATIVE.w 2 /
-//!HEIGHT NATIVE.h 2 /
+//!WIDTH NATIVE.w 4 /
+//!HEIGHT NATIVE.h 4 /
 //!COMPONENTS 3
 
 #define L_tex LUMADG_tex
@@ -174,11 +174,13 @@ vec4 hook() {
 
 
 
-//!DESC Anime4K-v3.0-ThinLines(Fast)-Kernel(X)
+//!DESC Anime4K-v3.1-ThinLines(VeryFast)-Kernel(X)
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND LUMAD
 //!SAVE LUMAD2
+//!WIDTH NATIVE.w 2 /
+//!HEIGHT NATIVE.h 2 /
 //!COMPONENTS 2
 
 vec4 hook() {
@@ -209,11 +211,13 @@ vec4 hook() {
 }
 
 
-//!DESC Anime4K-v3.0-ThinLines(Fast)-Kernel(Y)
+//!DESC Anime4K-v3.1-ThinLines(VeryFast)-Kernel(Y)
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND LUMAD2
 //!SAVE LUMAD2
+//!WIDTH NATIVE.w 2 /
+//!HEIGHT NATIVE.h 2 /
 //!COMPONENTS 2
 
 vec4 hook() {
@@ -248,7 +252,7 @@ vec4 hook() {
 	return vec4(xgrad, ygrad, 0, 0);
 }
 
-//!DESC Anime4K-v3.0-ThinLines(Fast)
+//!DESC Anime4K-v3.1-ThinLines(VeryFast)
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND LUMAD

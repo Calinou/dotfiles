@@ -1,4 +1,4 @@
-//Anime4K v3.0 GLSL
+//Anime4K v3.1 GLSL
 
 // MIT License
 
@@ -23,7 +23,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-//!DESC Anime4K-v3.0-RA-DoG-Downsample
+//!DESC Anime4K-v3.1-RA-DoG-Downsample
 //!HOOK NATIVE
 //!BIND HOOKED
 //!SAVE BACKUP
@@ -32,7 +32,7 @@ vec4 hook() {
 	return HOOKED_tex(HOOKED_pos);
 }
 
-//!DESC Anime4K-v3.0-RA-DoG-Downsample
+//!DESC Anime4K-v3.1-RA-DoG-Downsample
 //!HOOK NATIVE
 //!BIND HOOKED
 //!WIDTH NATIVE.w 2 /
@@ -42,8 +42,7 @@ vec4 hook() {
 	return HOOKED_tex(HOOKED_pos);
 }
 
-//!DESC Anime4K-v3.0-RA-DoG-Kernel(X)
-//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
+//!DESC Anime4K-v3.1-RA-DoG-Kernel(X)
 //!HOOK NATIVE
 //!BIND HOOKED
 //!SAVE GAUSS_X2
@@ -80,8 +79,7 @@ vec4 hook() {
 }
 
 
-//!DESC Anime4K-v3.0-RA-DoG-Kernel(Y)
-//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
+//!DESC Anime4K-v3.1-RA-DoG-Kernel(Y)
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND GAUSS_X2
@@ -122,8 +120,7 @@ vec4 hook() {
     return vec4(lumGaussian7(HOOKED_pos, vec2(0, HOOKED_pt.y)), minmax3(HOOKED_pos, vec2(0, HOOKED_pt.y)), 0);
 }
 
-//!DESC Anime4K-v3.0-RA-DoG
-//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
+//!DESC Anime4K-v3.1-RA-DoG
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND GAUSS_X2
@@ -142,7 +139,7 @@ vec4 hook() {
 }
 
 
-//!DESC Anime4K-v3.0-RA-DoG-Resample
+//!DESC Anime4K-v3.1-RA-DoG-Resample
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND BACKUP
@@ -157,7 +154,7 @@ vec4 hook() {
 	float u = HOOKED_tex(HOOKED_pos).x + RESID_tex(HOOKED_pos).x;
 	float o = BACKUP_tex(HOOKED_pos).x;
 	
-	return vec4(u * alpha + o * (1 - alpha), HOOKED_tex(HOOKED_pos).yz, 0);
+	return vec4(u * alpha + o * (1 - alpha), BACKUP_tex(HOOKED_pos).yz, 0);
 }
 
 

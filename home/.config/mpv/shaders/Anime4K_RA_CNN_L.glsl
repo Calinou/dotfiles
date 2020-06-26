@@ -1,4 +1,4 @@
-//Anime4K v3.0 GLSL
+//Anime4K v3.1 GLSL
 
 // MIT License
 
@@ -23,10 +23,28 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-//!DESC Anime4K-v3.0-Upscale(x2)-CNN-(L)-Conv-4x3x3x1
+//!DESC Anime4K-v3.1-RA-CNN(L)-Downsample
 //!HOOK NATIVE
 //!BIND HOOKED
-//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
+//!SAVE BACKUP
+
+vec4 hook() {
+	return HOOKED_tex(HOOKED_pos);
+}
+
+//!DESC Anime4K-v3.1-RA-CNN(L)-Downsample
+//!HOOK NATIVE
+//!BIND HOOKED
+//!WIDTH NATIVE.w 2 /
+//!HEIGHT NATIVE.h 2 /
+
+vec4 hook() {
+	return HOOKED_tex(HOOKED_pos);
+}
+
+//!DESC Anime4K-v3.1-RA-CNN-(L)-Conv-4x3x3x1
+//!HOOK NATIVE
+//!BIND HOOKED
 //!COMPONENTS 4
 //!SAVE LUMAN0
 
@@ -48,10 +66,9 @@ vec4 hook() {
     return vec4(s, t, u, v);
 }
 
-//!DESC Anime4K-v3.0-Upscale(x2)-CNN-(L)-Conv-4x3x3x8
+//!DESC Anime4K-v3.1-RA-CNN-(L)-Conv-4x3x3x8
 //!HOOK NATIVE
 //!BIND HOOKED
-//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
 //!COMPONENTS 4
 //!BIND LUMAN0
 //!SAVE LUMAN1
@@ -129,10 +146,9 @@ vec4 hook() {
     return vec4(o0, p0, q0, r0);
 }
 
-//!DESC Anime4K-v3.0-Upscale(x2)-CNN-(L)-Conv-4x3x3x8
+//!DESC Anime4K-v3.1-RA-CNN-(L)-Conv-4x3x3x8
 //!HOOK NATIVE
 //!BIND HOOKED
-//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
 //!COMPONENTS 4
 //!BIND LUMAN1
 //!SAVE LUMAN2
@@ -210,10 +226,9 @@ vec4 hook() {
     return vec4(o0, p0, q0, r0);
 }
 
-//!DESC Anime4K-v3.0-Upscale(x2)-CNN-(L)-Conv-4x3x3x8
+//!DESC Anime4K-v3.1-RA-CNN-(L)-Conv-4x3x3x8
 //!HOOK NATIVE
 //!BIND HOOKED
-//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
 //!COMPONENTS 4
 //!BIND LUMAN2
 //!SAVE LUMAN3
@@ -291,10 +306,9 @@ vec4 hook() {
     return vec4(o0, p0, q0, r0);
 }
 
-//!DESC Anime4K-v3.0-Upscale(x2)-CNN-(L)-Conv-4x3x3x8
+//!DESC Anime4K-v3.1-RA-CNN-(L)-Conv-4x3x3x8
 //!HOOK NATIVE
 //!BIND HOOKED
-//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
 //!COMPONENTS 4
 //!BIND LUMAN3
 //!SAVE LUMAN4
@@ -372,10 +386,9 @@ vec4 hook() {
     return vec4(o0, p0, q0, r0);
 }
 
-//!DESC Anime4K-v3.0-Upscale(x2)-CNN-(L)-Conv-4x3x3x8
+//!DESC Anime4K-v3.1-RA-CNN-(L)-Conv-4x3x3x8
 //!HOOK NATIVE
 //!BIND HOOKED
-//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
 //!COMPONENTS 4
 //!BIND LUMAN4
 //!SAVE LUMAN5
@@ -453,10 +466,9 @@ vec4 hook() {
     return vec4(o0, p0, q0, r0);
 }
 
-//!DESC Anime4K-v3.0-Upscale(x2)-CNN-(L)-Conv-4x3x3x8
+//!DESC Anime4K-v3.1-RA-CNN-(L)-Conv-4x3x3x8
 //!HOOK NATIVE
 //!BIND HOOKED
-//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
 //!COMPONENTS 4
 //!BIND LUMAN5
 //!SAVE LUMAN6
@@ -534,10 +546,9 @@ vec4 hook() {
     return vec4(o0, p0, q0, r0);
 }
 
-//!DESC Anime4K-v3.0-Upscale(x2)-CNN-(L)-Conv-4x3x3x8
+//!DESC Anime4K-v3.1-RA-CNN-(L)-Conv-4x3x3x8
 //!HOOK NATIVE
 //!BIND HOOKED
-//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
 //!COMPONENTS 4
 //!BIND LUMAN6
 //!SAVE LUMAN7
@@ -615,10 +626,9 @@ vec4 hook() {
     return vec4(o0, p0, q0, r0);
 }
 
-//!DESC Anime4K-v3.0-Upscale(x2)-CNN-(L)-Conv-4x3x3x8
+//!DESC Anime4K-v3.1-RA-CNN-(L)-Conv-4x3x3x8
 //!HOOK NATIVE
 //!BIND HOOKED
-//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
 //!COMPONENTS 4
 //!BIND LUMAN7
 //!SAVE LUMAN8
@@ -696,10 +706,9 @@ vec4 hook() {
     return vec4(o0, p0, q0, r0);
 }
 
-//!DESC Anime4K-v3.0-Upscale(x2)-CNN-(L)-Conv-4x3x3x8
+//!DESC Anime4K-v3.1-RA-CNN-(L)-Conv-4x3x3x8
 //!HOOK NATIVE
 //!BIND HOOKED
-//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
 //!COMPONENTS 4
 //!BIND LUMAN8
 //!SAVE LUMAN9
@@ -777,12 +786,9 @@ vec4 hook() {
     return vec4(o0, p0, q0, r0);
 }
 
-//!DESC Anime4K-v3.0-Upscale(x2)-CNN-(L)-Conv-Reduce
+//!DESC Anime4K-v3.1-RA-CNN-(L)-Conv-Reduce
 //!HOOK NATIVE
 //!BIND HOOKED
-//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
-//!WIDTH LUMA.w
-//!HEIGHT LUMA.h
 //!COMPONENTS 4
 //!BIND LUMAN1
 //!BIND LUMAN2
@@ -830,18 +836,36 @@ vec4 hook() {
     return vec4(o, p, q, r);
 }
 
+//!DESC Anime4K-v3.1-RA-CNN(L)
 //!HOOK NATIVE
 //!BIND HOOKED
-//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
 //!BIND LUMAN0
-//!WIDTH NATIVE.w 2 *
-//!HEIGHT NATIVE.h 2 *
-//!DESC Anime4K-v3.0-Upscale(x2)-CNN(L)
-
+//!WIDTH BACKUP.w
+//!HEIGHT BACKUP.h
+//!COMPONENTS 1
+//!SAVE RESID
 
 vec4 hook() {
 	vec2 f = fract(LUMAN0_pos * LUMAN0_size);
 	ivec2 i = ivec2(f * vec2(2));
 	float c = LUMAN0_tex((vec2(0.5) - f) * LUMAN0_pt + LUMAN0_pos)[i.y * 2 + i.x];
-	return vec4(c + HOOKED_tex(HOOKED_pos).x, HOOKED_tex(HOOKED_pos).yz, 0);
+	return vec4(c);
+}
+
+//!DESC Anime4K-v3.1-RA-CNN(L)-Resample
+//!HOOK NATIVE
+//!BIND HOOKED
+//!BIND BACKUP
+//!BIND RESID
+//!WIDTH BACKUP.w
+//!HEIGHT BACKUP.h
+
+#define STRENGTH 1 //Strength of artifact reduction, high values might blur some edges.
+
+vec4 hook() {
+	float alpha = clamp(abs(RESID_tex(HOOKED_pos).x) * 20 * STRENGTH, 0, 1);
+	float u = HOOKED_tex(HOOKED_pos).x + RESID_tex(HOOKED_pos).x;
+	float o = BACKUP_tex(HOOKED_pos).x;
+	
+	return vec4(u * alpha + o * (1 - alpha), BACKUP_tex(HOOKED_pos).yz, 0);
 }

@@ -1,4 +1,4 @@
-//Anime4K v3.0 GLSL
+//Anime4K v3.1 GLSL
 
 // MIT License
 
@@ -23,26 +23,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-//!DESC Anime4K-v3.0-RA-CNN(UL)-Downsample
-//!HOOK NATIVE
-//!BIND HOOKED
-//!SAVE BACKUP
-
-vec4 hook() {
-	return HOOKED_tex(HOOKED_pos);
-}
-
-//!DESC Anime4K-v3.0-RA-CNN(UL)-Downsample
-//!HOOK NATIVE
-//!BIND HOOKED
-//!WIDTH NATIVE.w 2 /
-//!HEIGHT NATIVE.h 2 /
-
-vec4 hook() {
-	return HOOKED_tex(HOOKED_pos);
-}
-
-//!DESC Anime4K-v3.0-RA-CNN(UL)-Conv-4x3x3x1
+//!DESC Anime4K-v3.1-Upscale(x2)+Deblur-CNN(UL)-Conv-4x3x3x1
 //!HOOK NATIVE
 //!BIND HOOKED
 //!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
@@ -67,7 +48,7 @@ vec4 hook() {
     return vec4(s, t, u, v);
 }
 
-//!DESC Anime4K-v3.0-RA-CNN(UL)-Conv-4x3x3x1
+//!DESC Anime4K-v3.1-Upscale(x2)+Deblur-CNN(UL)-Conv-4x3x3x1
 //!HOOK NATIVE
 //!BIND HOOKED
 //!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
@@ -92,7 +73,7 @@ vec4 hook() {
     return vec4(s, t, u, v);
 }
 
-//!DESC Anime4K-v3.0-RA-CNN(UL)-Conv-4x3x3x16
+//!DESC Anime4K-v3.1-Upscale(x2)+Deblur-CNN(UL)-Conv-4x3x3x16
 //!HOOK NATIVE
 //!BIND HOOKED
 //!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
@@ -237,7 +218,7 @@ vec4 hook() {
     return vec4(o0, p0, q0, r0);
 }
 
-//!DESC Anime4K-v3.0-RA-CNN(UL)-Conv-4x3x3x16
+//!DESC Anime4K-v3.1-Upscale(x2)+Deblur-CNN(UL)-Conv-4x3x3x16
 //!HOOK NATIVE
 //!BIND HOOKED
 //!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
@@ -382,7 +363,7 @@ vec4 hook() {
     return vec4(o1, p1, q1, r1);
 }
 
-//!DESC Anime4K-v3.0-RA-CNN(UL)-Conv-4x3x3x16
+//!DESC Anime4K-v3.1-Upscale(x2)+Deblur-CNN(UL)-Conv-4x3x3x16
 //!HOOK NATIVE
 //!BIND HOOKED
 //!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
@@ -527,7 +508,7 @@ vec4 hook() {
     return vec4(o0, p0, q0, r0);
 }
 
-//!DESC Anime4K-v3.0-RA-CNN(UL)-Conv-4x3x3x16
+//!DESC Anime4K-v3.1-Upscale(x2)+Deblur-CNN(UL)-Conv-4x3x3x16
 //!HOOK NATIVE
 //!BIND HOOKED
 //!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
@@ -672,7 +653,7 @@ vec4 hook() {
     return vec4(o1, p1, q1, r1);
 }
 
-//!DESC Anime4K-v3.0-RA-CNN(UL)-Conv-4x3x3x16
+//!DESC Anime4K-v3.1-Upscale(x2)+Deblur-CNN(UL)-Conv-4x3x3x16
 //!HOOK NATIVE
 //!BIND HOOKED
 //!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
@@ -817,7 +798,7 @@ vec4 hook() {
     return vec4(o0, p0, q0, r0);
 }
 
-//!DESC Anime4K-v3.0-RA-CNN(UL)-Conv-4x3x3x16
+//!DESC Anime4K-v3.1-Upscale(x2)+Deblur-CNN(UL)-Conv-4x3x3x16
 //!HOOK NATIVE
 //!BIND HOOKED
 //!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
@@ -962,7 +943,7 @@ vec4 hook() {
     return vec4(o1, p1, q1, r1);
 }
 
-//!DESC Anime4K-v3.0-RA-CNN(UL)-Conv-4x3x3x16
+//!DESC Anime4K-v3.1-Upscale(x2)+Deblur-CNN(UL)-Conv-4x3x3x16
 //!HOOK NATIVE
 //!BIND HOOKED
 //!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
@@ -1107,7 +1088,7 @@ vec4 hook() {
     return vec4(o0, p0, q0, r0);
 }
 
-//!DESC Anime4K-v3.0-RA-CNN(UL)-Conv-4x3x3x16
+//!DESC Anime4K-v3.1-Upscale(x2)+Deblur-CNN(UL)-Conv-4x3x3x16
 //!HOOK NATIVE
 //!BIND HOOKED
 //!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
@@ -1252,7 +1233,7 @@ vec4 hook() {
     return vec4(o1, p1, q1, r1);
 }
 
-//!DESC Anime4K-v3.0-RA-CNN(UL)-Conv-4x3x3x16
+//!DESC Anime4K-v3.1-Upscale(x2)+Deblur-CNN(UL)-Conv-4x3x3x16
 //!HOOK NATIVE
 //!BIND HOOKED
 //!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
@@ -1397,7 +1378,7 @@ vec4 hook() {
     return vec4(o0, p0, q0, r0);
 }
 
-//!DESC Anime4K-v3.0-RA-CNN(UL)-Conv-4x3x3x16
+//!DESC Anime4K-v3.1-Upscale(x2)+Deblur-CNN(UL)-Conv-4x3x3x16
 //!HOOK NATIVE
 //!BIND HOOKED
 //!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
@@ -1542,7 +1523,7 @@ vec4 hook() {
     return vec4(o1, p1, q1, r1);
 }
 
-//!DESC Anime4K-v3.0-RA-CNN(UL)-Conv-4x3x3x16
+//!DESC Anime4K-v3.1-Upscale(x2)+Deblur-CNN(UL)-Conv-4x3x3x16
 //!HOOK NATIVE
 //!BIND HOOKED
 //!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
@@ -1687,7 +1668,7 @@ vec4 hook() {
     return vec4(o0, p0, q0, r0);
 }
 
-//!DESC Anime4K-v3.0-RA-CNN(UL)-Conv-4x3x3x16
+//!DESC Anime4K-v3.1-Upscale(x2)+Deblur-CNN(UL)-Conv-4x3x3x16
 //!HOOK NATIVE
 //!BIND HOOKED
 //!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
@@ -1832,7 +1813,7 @@ vec4 hook() {
     return vec4(o1, p1, q1, r1);
 }
 
-//!DESC Anime4K-v3.0-RA-CNN(UL)-Conv-4x3x3x16
+//!DESC Anime4K-v3.1-Upscale(x2)+Deblur-CNN(UL)-Conv-4x3x3x16
 //!HOOK NATIVE
 //!BIND HOOKED
 //!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
@@ -1977,7 +1958,7 @@ vec4 hook() {
     return vec4(o0, p0, q0, r0);
 }
 
-//!DESC Anime4K-v3.0-RA-CNN(UL)-Conv-4x3x3x16
+//!DESC Anime4K-v3.1-Upscale(x2)+Deblur-CNN(UL)-Conv-4x3x3x16
 //!HOOK NATIVE
 //!BIND HOOKED
 //!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
@@ -2122,7 +2103,7 @@ vec4 hook() {
     return vec4(o1, p1, q1, r1);
 }
 
-//!DESC Anime4K-v3.0-RA-CNN(UL)-Conv-4x3x3x16
+//!DESC Anime4K-v3.1-Upscale(x2)+Deblur-CNN(UL)-Conv-4x3x3x16
 //!HOOK NATIVE
 //!BIND HOOKED
 //!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
@@ -2267,7 +2248,7 @@ vec4 hook() {
     return vec4(o0, p0, q0, r0);
 }
 
-//!DESC Anime4K-v3.0-RA-CNN(UL)-Conv-4x3x3x16
+//!DESC Anime4K-v3.1-Upscale(x2)+Deblur-CNN(UL)-Conv-4x3x3x16
 //!HOOK NATIVE
 //!BIND HOOKED
 //!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
@@ -2412,7 +2393,7 @@ vec4 hook() {
     return vec4(o1, p1, q1, r1);
 }
 
-//!DESC Anime4K-v3.0-RA-CNN(UL)-Conv-4x3x3x16
+//!DESC Anime4K-v3.1-Upscale(x2)+Deblur-CNN(UL)-Conv-4x3x3x16
 //!HOOK NATIVE
 //!BIND HOOKED
 //!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
@@ -2557,7 +2538,7 @@ vec4 hook() {
     return vec4(o0, p0, q0, r0);
 }
 
-//!DESC Anime4K-v3.0-RA-CNN(UL)-Conv-4x3x3x16
+//!DESC Anime4K-v3.1-Upscale(x2)+Deblur-CNN(UL)-Conv-4x3x3x16
 //!HOOK NATIVE
 //!BIND HOOKED
 //!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
@@ -2702,7 +2683,7 @@ vec4 hook() {
     return vec4(o1, p1, q1, r1);
 }
 
-//!DESC Anime4K-v3.0-RA-CNN(UL)-Conv-4x3x3x16
+//!DESC Anime4K-v3.1-Upscale(x2)+Deblur-CNN(UL)-Conv-4x3x3x16
 //!HOOK NATIVE
 //!BIND HOOKED
 //!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
@@ -2847,7 +2828,7 @@ vec4 hook() {
     return vec4(o0, p0, q0, r0);
 }
 
-//!DESC Anime4K-v3.0-RA-CNN(UL)-Conv-4x3x3x16
+//!DESC Anime4K-v3.1-Upscale(x2)+Deblur-CNN(UL)-Conv-4x3x3x16
 //!HOOK NATIVE
 //!BIND HOOKED
 //!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
@@ -2992,7 +2973,7 @@ vec4 hook() {
     return vec4(o1, p1, q1, r1);
 }
 
-//!DESC Anime4K-v3.0-RA-CNN(UL)-Conv-4x3x3x16
+//!DESC Anime4K-v3.1-Upscale(x2)+Deblur-CNN(UL)-Conv-4x3x3x16
 //!HOOK NATIVE
 //!BIND HOOKED
 //!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
@@ -3137,7 +3118,7 @@ vec4 hook() {
     return vec4(o0, p0, q0, r0);
 }
 
-//!DESC Anime4K-v3.0-RA-CNN(UL)-Conv-4x3x3x16
+//!DESC Anime4K-v3.1-Upscale(x2)+Deblur-CNN(UL)-Conv-4x3x3x16
 //!HOOK NATIVE
 //!BIND HOOKED
 //!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
@@ -3282,7 +3263,7 @@ vec4 hook() {
     return vec4(o1, p1, q1, r1);
 }
 
-//!DESC Anime4K-v3.0-RA-CNN(UL)-Conv-4x3x3x16
+//!DESC Anime4K-v3.1-Upscale(x2)+Deblur-CNN(UL)-Conv-4x3x3x16
 //!HOOK NATIVE
 //!BIND HOOKED
 //!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
@@ -3427,7 +3408,7 @@ vec4 hook() {
     return vec4(o0, p0, q0, r0);
 }
 
-//!DESC Anime4K-v3.0-RA-CNN(UL)-Conv-4x3x3x16
+//!DESC Anime4K-v3.1-Upscale(x2)+Deblur-CNN(UL)-Conv-4x3x3x16
 //!HOOK NATIVE
 //!BIND HOOKED
 //!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
@@ -3572,7 +3553,7 @@ vec4 hook() {
     return vec4(o1, p1, q1, r1);
 }
 
-//!DESC Anime4K-v3.0-RA-CNN(UL)-Conv-4x3x3x16
+//!DESC Anime4K-v3.1-Upscale(x2)+Deblur-CNN(UL)-Conv-4x3x3x16
 //!HOOK NATIVE
 //!BIND HOOKED
 //!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
@@ -3717,7 +3698,7 @@ vec4 hook() {
     return vec4(o0, p0, q0, r0);
 }
 
-//!DESC Anime4K-v3.0-RA-CNN(UL)-Conv-4x3x3x16
+//!DESC Anime4K-v3.1-Upscale(x2)+Deblur-CNN(UL)-Conv-4x3x3x16
 //!HOOK NATIVE
 //!BIND HOOKED
 //!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
@@ -3862,12 +3843,10 @@ vec4 hook() {
     return vec4(o1, p1, q1, r1);
 }
 
-//!DESC Anime4K-v3.0-RA-CNN(UL)-Conv-Reduce
+//!DESC Anime4K-v3.1-Upscale(x2)+Deblur-CNN(UL)-Conv-Reduce
 //!HOOK NATIVE
 //!BIND HOOKED
 //!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
-//!WIDTH LUMA.w
-//!HEIGHT LUMA.h
 //!COMPONENTS 4
 //!BIND LUMAN10
 //!BIND LUMAN11
@@ -3935,12 +3914,10 @@ vec4 hook() {
     return vec4(o, p, q, r);
 }
 
-//!DESC Anime4K-v3.0-RA-CNN(UL)-Conv-Reduce
+//!DESC Anime4K-v3.1-Upscale(x2)+Deblur-CNN(UL)-Conv-Reduce
 //!HOOK NATIVE
 //!BIND HOOKED
 //!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
-//!WIDTH LUMA.w
-//!HEIGHT LUMA.h
 //!COMPONENTS 4
 //!BIND LUMAN80
 //!BIND LUMAN81
@@ -4001,37 +3978,100 @@ vec4 hook() {
     return vec4(o, p, q, r);
 }
 
-//!DESC Anime4K-v3.0-RA-CNN(UL)
+//!DESC Anime4K-v3.1-Upscale(x2)+Deblur-CNN(UL)-Kernel(X)
 //!HOOK NATIVE
 //!BIND HOOKED
+//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
+//!SAVE MMKERNEL
+//!COMPONENTS 2
+
+#define L_tex HOOKED_tex
+
+float max3v(float a, float b, float c) {
+	return max(max(a, b), c);
+}
+float min3v(float a, float b, float c) {
+	return min(min(a, b), c);
+}
+
+vec2 minmax3(vec2 pos, vec2 d) {
+	float a = L_tex(pos - d).x;
+	float b = L_tex(pos).x;
+	float c = L_tex(pos + d).x;
+	
+	return vec2(min3v(a, b, c), max3v(a, b, c));
+}
+
+vec4 hook() {
+    return vec4(minmax3(HOOKED_pos, vec2(HOOKED_pt.x, 0)), 0, 0);
+}
+
+//!DESC Anime4K-v3.1-Upscale(x2)+Deblur-CNN(UL)-Kernel(Y)
+//!HOOK NATIVE
+//!BIND HOOKED
+//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
+//!BIND MMKERNEL
+//!SAVE MMKERNEL
+//!COMPONENTS 2
+
+#define L_tex MMKERNEL_tex
+
+float max3v(float a, float b, float c) {
+	return max(max(a, b), c);
+}
+float min3v(float a, float b, float c) {
+	return min(min(a, b), c);
+}
+
+vec2 minmax3(vec2 pos, vec2 d) {
+	float a0 = L_tex(pos - d).x;
+	float b0 = L_tex(pos).x;
+	float c0 = L_tex(pos + d).x;
+	
+	float a1 = L_tex(pos - d).y;
+	float b1 = L_tex(pos).y;
+	float c1 = L_tex(pos + d).y;
+	
+	return vec2(min3v(a0, b0, c0), max3v(a1, b1, c1));
+}
+
+vec4 hook() {
+    return vec4(minmax3(HOOKED_pos, vec2(0, HOOKED_pt.y)), 0, 0);
+}
+
+//!DESC Anime4K-v3.1-Upscale(x2)+Deblur-CNN(UL)
+//!HOOK NATIVE
+//!BIND HOOKED
+//!WHEN OUTPUT.w NATIVE.w / 1.200 > OUTPUT.h NATIVE.h / 1.200 > *
+//!BIND MMKERNEL
 //!BIND LUMAN0
-//!WIDTH BACKUP.w
-//!HEIGHT BACKUP.h
-//!COMPONENTS 1
-//!SAVE RESID
+//!WIDTH NATIVE.w 2 *
+//!HEIGHT NATIVE.h 2 *
+
+#define STRENGTH 1 //De-blur proportional strength, higher is sharper. However, it is better to tweak BLUR_CURVE instead to avoid ringing.
+#define BLUR_CURVE 0.6 //De-blur power curve, lower is sharper. Good values are between 0.3 - 1. Values greater than 1 softens the image;
+#define BLUR_THRESHOLD 0.1 //Value where curve kicks in, used to not de-blur already sharp edges. Only de-blur values that fall below this threshold.
+#define NOISE_THRESHOLD 0.001 //Value where curve stops, used to not sharpen noise. Only de-blur values that fall above this threshold.
 
 vec4 hook() {
 	vec2 f = fract(LUMAN0_pos * LUMAN0_size);
 	ivec2 i = ivec2(f * vec2(2));
-	float c = LUMAN0_tex((vec2(0.5) - f) * LUMAN0_pt + LUMAN0_pos)[i.y * 2 + i.x];
-	return vec4(c);
-}
-
-//!DESC Anime4K-v3.0-RA-CNN(UL)-Resample
-//!HOOK NATIVE
-//!BIND HOOKED
-//!BIND BACKUP
-//!BIND RESID
-//!WIDTH BACKUP.w
-//!HEIGHT BACKUP.h
-
-#define STRENGTH 1 //Strength of artifact reduction, high values might blur some edges.
-
-vec4 hook() {
-	float alpha = clamp(abs(RESID_tex(HOOKED_pos).x) * 20 * STRENGTH, 0, 1);
-	float u = HOOKED_tex(HOOKED_pos).x + RESID_tex(HOOKED_pos).x;
-	float o = BACKUP_tex(HOOKED_pos).x;
+	float c0 = LUMAN0_tex((vec2(0.5) - f) * LUMAN0_pt + LUMAN0_pos)[i.y * 2 + i.x];
+	float c = c0 * STRENGTH;
 	
-	return vec4(u * alpha + o * (1 - alpha), HOOKED_tex(HOOKED_pos).yz, 0);
+	vec2 mm = MMKERNEL_tex((vec2(0.5) - f) * MMKERNEL_pt + MMKERNEL_pos).xy;
+	
+	float t_range = BLUR_THRESHOLD - NOISE_THRESHOLD;
+	
+	float c_t = abs(c);
+	if (c_t > NOISE_THRESHOLD && c_t < BLUR_THRESHOLD) {
+		c_t = (c_t - NOISE_THRESHOLD) / t_range;
+		c_t = pow(c_t, BLUR_CURVE);
+		c_t = c_t * t_range + NOISE_THRESHOLD;
+		c_t = c_t * sign(c);
+		return vec4(clamp(c_t + HOOKED_tex(HOOKED_pos).x, MMKERNEL_tex(HOOKED_pos).x, MMKERNEL_tex(HOOKED_pos).y), HOOKED_tex(HOOKED_pos).yz, 0);
+	} else {
+		return vec4(c + HOOKED_tex(HOOKED_pos).x, HOOKED_tex(HOOKED_pos).yz, 0);
+	}
+	
 }
-

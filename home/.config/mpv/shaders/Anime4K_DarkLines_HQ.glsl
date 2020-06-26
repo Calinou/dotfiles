@@ -1,4 +1,4 @@
-//Anime4K v3.0 GLSL
+//Anime4K v3.1 GLSL
 
 // MIT License
 
@@ -23,12 +23,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-//!DESC Anime4K-v3.0-DarkLines(Fast)-Kernel(X)
+//!DESC Anime4K-v3.1-DarkLines-Kernel(X)
 //!HOOK NATIVE
 //!BIND HOOKED
 //!SAVE MMKERNEL
-//!WIDTH NATIVE.w 2 /
-//!HEIGHT NATIVE.h 2 /
 //!COMPONENTS 1
 
 #define L_tex HOOKED_tex
@@ -61,13 +59,11 @@ vec4 hook() {
     return vec4(lumGaussian(HOOKED_pos, vec2(HOOKED_pt.x, 0)));
 }
 
-//!DESC Anime4K-v3.0-DarkLines(Fast)-Kernel(Y)
+//!DESC Anime4K-v3.1-DarkLines-Kernel(Y)
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND MMKERNEL
 //!SAVE MMKERNEL
-//!WIDTH NATIVE.w 2 /
-//!HEIGHT NATIVE.h 2 /
 //!COMPONENTS 1
 
 #define L_tex MMKERNEL_tex
@@ -100,13 +96,11 @@ vec4 hook() {
     return vec4(min(HOOKED_tex(HOOKED_pos).x - lumGaussian(HOOKED_pos, vec2(0, HOOKED_pt.y)), 0));
 }
 
-//!DESC Anime4K-v3.0-DarkLines(Fast)-Kernel(X)
+//!DESC Anime4K-v3.1-DarkLines-Kernel(X)
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND MMKERNEL
 //!SAVE MMKERNEL
-//!WIDTH NATIVE.w 2 /
-//!HEIGHT NATIVE.h 2 /
 //!COMPONENTS 1
 
 #define L_tex MMKERNEL_tex
@@ -139,13 +133,11 @@ vec4 hook() {
     return vec4(lumGaussian(HOOKED_pos, vec2(HOOKED_pt.x, 0)));
 }
 
-//!DESC Anime4K-v3.0-DarkLines(Fast)-Kernel(Y)
+//!DESC Anime4K-v3.1-DarkLines-Kernel(Y)
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND MMKERNEL
 //!SAVE MMKERNEL
-//!WIDTH NATIVE.w 2 /
-//!HEIGHT NATIVE.h 2 /
 //!COMPONENTS 1
 
 #define L_tex MMKERNEL_tex
@@ -178,7 +170,7 @@ vec4 hook() {
     return vec4(lumGaussian(HOOKED_pos, vec2(0, HOOKED_pt.y)));
 }
 
-//!DESC Anime4K-v3.0-DarkLines(Fast)
+//!DESC Anime4K-v3.1-DarkLines
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND MMKERNEL
@@ -188,7 +180,6 @@ vec4 hook() {
 
 vec4 hook() {
 	float c = (MMKERNEL_tex(HOOKED_pos).x) * STRENGTH;
-	//return vec4(c + 0.5, 0.5, 0.5, 0);
 	return vec4(clamp(c + L_tex(HOOKED_pos).x, 0, L_tex(HOOKED_pos).x), HOOKED_tex(HOOKED_pos).yz, 0);
 }
 

@@ -1,4 +1,4 @@
-//Anime4K v3.0 GLSL
+//Anime4K v3.1 GLSL
 
 // MIT License
 
@@ -23,7 +23,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-//!DESC Anime4K-v3.0-Upscale(x2)+Deblur-Original-Kernel(X)
+//!DESC Anime4K-v3.1-Upscale(x2)-Original-Kernel(X)
 //!HOOK NATIVE
 //!BIND HOOKED
 //!SAVE LUMAD
@@ -59,7 +59,7 @@ vec4 hook() {
 }
 
 
-//!DESC Anime4K-v3.0-Upscale(x2)+Deblur-Original-Kernel(Y)
+//!DESC Anime4K-v3.1-Upscale(x2)-Original-Kernel(Y)
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND LUMAD
@@ -72,7 +72,7 @@ vec4 hook() {
 /* --------------------- SETTINGS --------------------- */
 
 //Strength of edge refinement, good values are between 0.2 and 4
-#define REFINE_STRENGTH 1
+#define REFINE_STRENGTH 0.5
 
 
 /* --- MODIFY THESE SETTINGS BELOW AT YOUR OWN RISK --- */
@@ -135,7 +135,7 @@ vec4 hook() {
 	return vec4(sobel_norm, dval, 0, 0);
 }
 
-//!DESC Anime4K-v3.0-Upscale(x2)+Deblur-Original-Kernel(X)
+//!DESC Anime4K-v3.1-Upscale(x2)-Original-Kernel(X)
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND LUMAD
@@ -176,7 +176,7 @@ vec4 hook() {
 }
 
 
-//!DESC Anime4K-v3.0-Upscale(x2)+Deblur-Original-Kernel(Y)
+//!DESC Anime4K-v3.1-Upscale(x2)-Original-Kernel(Y)
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND LUMAD
@@ -227,7 +227,7 @@ vec4 hook() {
 }
 
 
-//!DESC Anime4K-v3.0-Upscale(x2)+Deblur-Original
+//!DESC Anime4K-v3.1-Upscale(x2)-Original
 //!HOOK NATIVE
 //!BIND HOOKED
 //!BIND LUMAD
