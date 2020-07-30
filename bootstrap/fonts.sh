@@ -29,12 +29,12 @@ rm -f "$tmp"
 
 # Install JetBrains Mono
 
-JETBRAINS_MONO_VERSION="1.0.6"
+JETBRAINS_MONO_VERSION="2.001"
 
 tmp="$(mktemp)"
-curl -fsSL "https://github.com/JetBrains/JetBrainsMono/releases/download/v$JETBRAINS_MONO_VERSION/JetBrainsMono-$JETBRAINS_MONO_VERSION.zip" \
+curl -fsSL "https://github.com/JetBrains/JetBrainsMono/releases/download/v$JETBRAINS_MONO_VERSION/JetBrains.Mono.$JETBRAINS_MONO_VERSION.zip" \
     -o "$tmp"
-unzip -jo "$tmp" "JetBrainsMono-$JETBRAINS_MONO_VERSION/ttf/*" -d "$HOME/.fonts/jetbrains-mono/"
+unzip -jo "$tmp" "JetBrains Mono $JETBRAINS_MONO_VERSION/ttf/*" -d "$HOME/.fonts/jetbrains-mono/"
 rm -f "$tmp"
 
 # Install IBM Plex
