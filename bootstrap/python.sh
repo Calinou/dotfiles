@@ -5,7 +5,7 @@ IFS=$'\n\t'
 
 # Install pyenv and Python if not already present
 
-PYTHON3_VERSION="3.8.2"
+PYTHON3_VERSION="3.8.6"
 PYTHON2_VERSION="2.7.18"
 
 if ! command -v pyenv > /dev/null 2>&1; then
