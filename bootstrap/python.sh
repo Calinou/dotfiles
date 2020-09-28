@@ -44,6 +44,7 @@ pip3 install --upgrade \
     py-spy \
     remarshal \
     rope \
+    scons \
     setuptools \
     speedtest-cli \
     sphinx \
