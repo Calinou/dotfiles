@@ -5,8 +5,7 @@ IFS=$'\n\t'
 
 # Install pyenv and Python if not already present
 
-PYTHON3_VERSION="3.8.6"
-PYTHON2_VERSION="2.7.18"
+PYTHON_VERSION="3.9.0"
 
 if ! command -v pyenv > /dev/null 2>&1; then
   tmp="$(mktemp)"
@@ -16,9 +15,8 @@ if ! command -v pyenv > /dev/null 2>&1; then
   rm "$tmp"
   export PATH="$HOME/.pyenv/bin:$HOME/.pyenv/shims:$PATH"
 
-  pyenv install "$PYTHON3_VERSION"
-  pyenv install "$PYTHON2_VERSION"
-  pyenv global "$PYTHON2_VERSION" "$PYTHON3_VERSION"
+  CONFIGURE_OPTS="--enable-optimizations" pyenv install "$PYTHON_VERSION"
+  pyenv global "$PYTHON_VERSION"
 fi
 
 # Install Poetry
