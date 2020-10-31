@@ -10,7 +10,7 @@ if ! command -v gimme > /dev/null 2>&1; then
       -o "$HOME/.local/bin/gimme"
   chmod +x "$HOME/.local/bin/gimme"
 
-  gimme 1.13.5
+  gimme 1.15.3
 fi
 
 # Install packages

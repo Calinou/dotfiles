@@ -3,7 +3,7 @@
 export ANDROID_HOME="$HOME/.local/opt/android"
 export ANDROID_NDK_ROOT="$ANDROID_HOME/ndk-bundle"
 export GOPATH="$HOME/.go"
-export GOROOT="$HOME/.gimme/versions/go1.13.5.linux.amd64"
+export GOROOT="$HOME/.gimme/versions/go1.15.3.linux.amd64"
 export N_PREFIX="$HOME/.local/share"
 export WASMER_DIR="$HOME/.wasmer"
 export WASMER_CACHE_DIR="$WASMER_DIR/cache"
