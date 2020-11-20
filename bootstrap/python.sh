@@ -26,6 +26,7 @@ curl -sSL "https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.
 # Install packages
 
 pip3 install --upgrade \
+    better_exceptions \
     black \
     buku \
     codespell \
