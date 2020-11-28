@@ -5,7 +5,7 @@ IFS=$'\n\t'
 
 # Install gomplate
 
-VERSION="3.6.0"
+VERSION="3.8.0"
 
 curl -fsSL "https://github.com/hairyhenderson/gomplate/releases/download/v$VERSION/gomplate_linux-amd64" \
     -o "$HOME/.local/bin/gomplate"
