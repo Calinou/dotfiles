@@ -9,6 +9,7 @@ export WASMER_DIR="$HOME/.wasmer"
 export WASMER_CACHE_DIR="$WASMER_DIR/cache"
 export PATH="$HOME/.local/bin:$HOME/.local/share/flatpak/exports/bin:$HOME/.basher/bin:$HOME/.pyenv/bin:$HOME/.pyenv/shims:$HOME/.rbenv/bin:$HOME/.rbenv/shims:$HOME/.yarn/bin:$HOME/.npm/bin:$HOME/.fnm:$HOME/.cargo/bin:$GOROOT/bin:$GOPATH/bin:$HOME/.poetry/bin:$HOME/.phpenv/bin:$HOME/.phpenv/shims:$HOME/.config/composer/vendor/bin:$HOME/.nimble/bin:$HOME/.luarocks/bin:$WASMER_DIR/bin:$WASMER_DIR/globals/wapm_packages/.bin:/home/linuxbrew/.linuxbrew/bin:$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools/bin"
 
+export CMAKE_GENERATOR="Ninja"
 export EDITOR="micro"
 export VISUAL="micro"
 export WINEDEBUG="-all"
