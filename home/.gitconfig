@@ -6,6 +6,7 @@
 [alias]
 	lg = log --color --pretty=format:'%C(245)%h%Creset  %C(yellow)%ci %C(white bold)%>(24)%an%Creset -%C(bold magenta)%d%Creset %s' --abbrev-commit
 	addnw = !sh -c 'git diff -U0 -w --no-color "$@" | git apply --cached --ignore-whitespace --unidiff-zero -'
+	psuh = push
 [core]
 	pager = delta --plus-color="#012800" --minus-color="#340001" --theme='Monokai Extended'
 [branch]
@@ -29,10 +30,14 @@
 	protocol = ssh
 [tag]
 	forceSignAnnotated = true
+[interactive]
+	diffFilter = delta --color-only
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
-[interactive]
-	diffFilter = delta --color-only
+[merge]
+	renamelimit = 2500
+[diff]
+	colorMoved = default
