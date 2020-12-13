@@ -7,6 +7,7 @@
 	lg = log --color --pretty=format:'%C(245)%h%Creset  %C(yellow)%ci %C(white bold)%>(24)%an%Creset -%C(bold magenta)%d%Creset %s' --abbrev-commit
 	addnw = !sh -c 'git diff -U0 -w --no-color "$@" | git apply --cached --ignore-whitespace --unidiff-zero -'
 	psuh = push
+	ocmmit = commit
 [core]
 	pager = delta --plus-color="#012800" --minus-color="#340001" --theme='Monokai Extended'
 [branch]
