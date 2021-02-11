@@ -39,6 +39,6 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 [merge]
-	renamelimit = 2500
+	renamelimit = 10000
 [diff]
 	colorMoved = default
