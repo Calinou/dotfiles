@@ -5,7 +5,7 @@ IFS=$'\n\t'
 
 # Install hyperfine
 
-VERSION="1.9.0"
+VERSION="1.11.0"
 
 tmp="$(mktemp)"
 curl -fsSL "https://github.com/sharkdp/hyperfine/releases/download/v$VERSION/hyperfine-v$VERSION-x86_64-unknown-linux-gnu.tar.gz" \
