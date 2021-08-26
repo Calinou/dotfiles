@@ -27,6 +27,11 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
+[color "status"]
+	added = green bold
+  	anged = red bold strike
+	untracked = cyan
+	branch = yellow black bold ul
 [hub]
 	protocol = ssh
 [tag]
