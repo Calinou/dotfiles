@@ -82,3 +82,37 @@ curl256sum() {
 
   curl -fL "$1" | sha256sum | cut -d " " -f 1
 }
+
+# Cherry-pick Godot documentation PR for `3.4` and push it.
+doc-cp-3.4() {
+  if [[ "$#" -eq 0 ]]; then
+    echo "Usage: doc-cp-3.4 <Git commit hash>"
+    return 1
+  fi
+
+  git switch 3.4
+  git cherry-pick "$1"
+  git push git@github.com:godotengine/godot-docs.git 3.4 3.3 stable
+
+  # Be ready for future manual operations if needed.
+  git switch 3.4
+}
+
+# Cherry-pick Godot documentation PR for `3.4`, `3.3` and `stable`, and push it.
+doc-cp-3.3() {
+  if [[ "$#" -eq 0 ]]; then
+    echo "Usage: doc-cp-3.3 <Git commit hash>"
+    return 1
+  fi
+
+  git switch 3.4
+  git cherry-pick "$1"
+  git switch 3.3
+  git cherry-pick "$1"
+  git switch stable
+  git rebase 3.3
+  git push git@github.com:godotengine/godot-docs.git 3.4 3.3 stable
+
+  # Be ready for future manual operations if needed.
+  git switch 3.4
+}
