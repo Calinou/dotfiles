@@ -5,7 +5,7 @@ IFS=$'\n\t'
 
 # Install ripgrep
 
-VERSION="11.0.2"
+VERSION="13.0.0"
 
 tmp_archive="$(mktemp)"
 tmp_dir="$(mktemp -d)"
