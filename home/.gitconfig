@@ -8,6 +8,7 @@
 	addnw = !sh -c 'git diff -U0 -w --no-color "$@" | git apply --cached --ignore-whitespace --unidiff-zero -'
 	psuh = push
 	ocmmit = commit
+	fixup = commit --amend --no-edit
 	co = checkout
 	ci = commit
 	cp = cherry-pick
