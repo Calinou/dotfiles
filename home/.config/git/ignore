@@ -28,3 +28,6 @@ builddir/
 .project
 .classpath
 org.eclipse.buildship.core.prefs
+
+# Linux perf data file (default name)
+perf.data
