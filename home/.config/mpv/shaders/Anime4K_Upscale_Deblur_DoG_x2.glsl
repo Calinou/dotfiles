@@ -1,8 +1,6 @@
-//Anime4K v3.1 GLSL
-
 // MIT License
 
-// Copyright (c) 2019-2020 bloc97
+// Copyright (c) 2019-2021 bloc97
 // All rights reserved.
 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,32 +21,29 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-//!DESC Anime4K-v3.1-RA-DoG-Downsample
-//!HOOK NATIVE
+//!DESC Anime4K-v3.2-Upscale-Deblur-DoG-x2-Luma
+//!HOOK MAIN
 //!BIND HOOKED
-//!SAVE BACKUP
+//!SAVE LINELUMA
+//!COMPONENTS 1
 
-vec4 hook() {
-	return HOOKED_tex(HOOKED_pos);
+float get_luma(vec4 rgba) {
+	return dot(vec4(0.299, 0.587, 0.114, 0.0), rgba);
 }
 
-//!DESC Anime4K-v3.1-RA-DoG-Downsample
-//!HOOK NATIVE
-//!BIND HOOKED
-//!WIDTH NATIVE.w 2 /
-//!HEIGHT NATIVE.h 2 /
-
 vec4 hook() {
-	return HOOKED_tex(HOOKED_pos);
+    return vec4(get_luma(HOOKED_tex(HOOKED_pos)), 0.0, 0.0, 0.0);
 }
 
-//!DESC Anime4K-v3.1-RA-DoG-Kernel(X)
-//!HOOK NATIVE
+//!DESC Anime4K-v3.2-Upscale-Deblur-DoG-x2-Kernel-X
+//!WHEN OUTPUT.w MAIN.w / 1.200 > OUTPUT.h MAIN.h / 1.200 > *
+//!HOOK MAIN
 //!BIND HOOKED
+//!BIND LINELUMA
 //!SAVE GAUSS_X2
 //!COMPONENTS 3
 
-#define L_tex HOOKED_tex
+#define L_tex LINELUMA_tex
 
 float max3v(float a, float b, float c) {
 	return max(max(a, b), c);
@@ -79,8 +74,9 @@ vec4 hook() {
 }
 
 
-//!DESC Anime4K-v3.1-RA-DoG-Kernel(Y)
-//!HOOK NATIVE
+//!DESC Anime4K-v3.2-Upscale-Deblur-DoG-x2-Kernel-Y
+//!WHEN OUTPUT.w MAIN.w / 1.200 > OUTPUT.h MAIN.h / 1.200 > *
+//!HOOK MAIN
 //!BIND HOOKED
 //!BIND GAUSS_X2
 //!SAVE GAUSS_X2
@@ -120,41 +116,43 @@ vec4 hook() {
     return vec4(lumGaussian7(HOOKED_pos, vec2(0, HOOKED_pt.y)), minmax3(HOOKED_pos, vec2(0, HOOKED_pt.y)), 0);
 }
 
-//!DESC Anime4K-v3.1-RA-DoG
-//!HOOK NATIVE
+//!DESC Anime4K-v3.2-Upscale-Deblur-DoG-x2-Apply
+//!WHEN OUTPUT.w MAIN.w / 1.200 > OUTPUT.h MAIN.h / 1.200 > *
+//!HOOK MAIN
 //!BIND HOOKED
+//!BIND LINELUMA
 //!BIND GAUSS_X2
-//!WIDTH BACKUP.w
-//!HEIGHT BACKUP.h
-//!COMPONENTS 3
-//!SAVE RESID
+//!WIDTH MAIN.w 2 *
+//!HEIGHT MAIN.h 2 *
 
-#define STRENGTH 0.8 //De-blur proportional strength, higher is sharper.
+#define STRENGTH 0.6 //De-blur proportional strength, higher is sharper. However, it is better to tweak BLUR_CURVE instead to avoid ringing.
+#define BLUR_CURVE 0.6 //De-blur power curve, lower is sharper. Good values are between 0.3 - 1. Values greater than 1 softens the image;
+#define BLUR_THRESHOLD 0.1 //Value where curve kicks in, used to not de-blur already sharp edges. Only de-blur values that fall below this threshold.
+#define NOISE_THRESHOLD 0.001 //Value where curve stops, used to not sharpen noise. Only de-blur values that fall above this threshold.
 
-#define L_tex HOOKED_tex
+#define L_tex LINELUMA_tex
 
 vec4 hook() {
 	float c = (L_tex(HOOKED_pos).x - GAUSS_X2_tex(HOOKED_pos).x) * STRENGTH;
-	return vec4(clamp(c + L_tex(HOOKED_pos).x, GAUSS_X2_tex(HOOKED_pos).y, GAUSS_X2_tex(HOOKED_pos).z) - L_tex(HOOKED_pos).x);
-}
-
-
-//!DESC Anime4K-v3.1-RA-DoG-Resample
-//!HOOK NATIVE
-//!BIND HOOKED
-//!BIND BACKUP
-//!BIND RESID
-//!WIDTH BACKUP.w
-//!HEIGHT BACKUP.h
-
-#define STRENGTH 1 //Strength of artifact reduction, high values might blur some edges.
-
-vec4 hook() {
-	float alpha = clamp(abs(RESID_tex(HOOKED_pos).x) * 20 * STRENGTH, 0, 1);
-	float u = HOOKED_tex(HOOKED_pos).x + RESID_tex(HOOKED_pos).x;
-	float o = BACKUP_tex(HOOKED_pos).x;
 	
-	return vec4(u * alpha + o * (1 - alpha), BACKUP_tex(HOOKED_pos).yz, 0);
+	float t_range = BLUR_THRESHOLD - NOISE_THRESHOLD;
+	
+	float c_t = abs(c);
+	if (c_t > NOISE_THRESHOLD && c_t < BLUR_THRESHOLD) {
+		c_t = (c_t - NOISE_THRESHOLD) / t_range;
+		c_t = pow(c_t, BLUR_CURVE);
+		c_t = c_t * t_range + NOISE_THRESHOLD;
+		c_t = c_t * sign(c);
+	} else {
+		c_t = c;
+	}
+	
+	float cc = clamp(c_t + L_tex(HOOKED_pos).x, GAUSS_X2_tex(HOOKED_pos).y, GAUSS_X2_tex(HOOKED_pos).z) - L_tex(HOOKED_pos).x;
+	
+	//This trick is only possible if the inverse Y->RGB matrix has 1 for every row... (which is the case for BT.709)
+	//Otherwise we would need to convert RGB to YUV, modify Y then convert back to RGB.
+	return HOOKED_tex(HOOKED_pos) + cc;
 }
+
 
 
