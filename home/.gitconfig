@@ -9,6 +9,7 @@
 	psuh = push
 	ocmmit = commit
 	fixup = commit --amend --no-edit
+	fixpup = !sh -c 'git fixup && git push -f'
 	co = checkout
 	ci = commit
 	cp = cherry-pick
